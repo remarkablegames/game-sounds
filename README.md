@@ -7,7 +7,7 @@ Audio synthesized using the Python standard library (no samples, NumPy, or SciPy
 ## Requirements
 
 - [Python 3.9+](https://www.python.org/). Synthesis and WAV generation use the standard library; no Python packages or audio samples are needed.
-- [FFmpeg](https://ffmpeg.org/) with libvorbis and libmp3lame is required only for OGG and MP3 output.
+- [FFmpeg](https://ffmpeg.org/) with `libvorbis` and `libmp3lame` is required only for OGG and MP3 output.
 
 ## Install
 
