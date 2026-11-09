@@ -1,5 +1,7 @@
 # Game Sounds
 
+[![test](https://github.com/remarkablegames/game-sounds/actions/workflows/test.yml/badge.svg)](https://github.com/remarkablegames/game-sounds/actions/workflows/test.yml)
+
 🎵 Procedurally generated game sound effects in four audio styles.
 
 Audio synthesized using the Python standard library (no samples, NumPy, or SciPy). Each sound is rendered as a 44.1 kHz, mono WAV master. Optional OGG and MP3 versions require FFmpeg.
