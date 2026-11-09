@@ -4,36 +4,19 @@
 
 Audio synthesis uses the Python standard library. There no samples, NumPy, or SciPy. Each sound is rendered as a 44.1 kHz mono WAV master. OGG and MP3 copies are optional and require FFmpeg.
 
-## Styles
-
-4 styles:
-
-| Style | Character |
-| --- | --- |
-| `retro` | Chiptune pulse and square leads, bitcrush/sample-hold grit, arcade sweeps |
-| `modern` | Detuned saw layers, sub-bass thumps, resonant transients, soft clipping |
-| `soft` | Sine/triangle tones, gentle attacks, low-passed noise; muted and non-fatiguing |
-| `realistic` | Noise-based scuffs and impacts, resonant band-passes, pitch-dropped thumps |
-
-## Sounds
-
-Each style includes 18 sounds:
-
-| Category | Files | Variants | Use |
-| --- | --- | --- | --- |
-| Jump | `jump_01`, `jump_02` | 2 | Leaving the ground |
-| Walk | `walk_01` … `walk_04` | 4 | Rotate for footsteps |
-| Hit | `hit_light`, `hit_medium`, `hit_heavy` | 3 | Light, medium, and heavy impacts |
-| Land | `land_01`, `land_02` | 2 | Touching down after a jump |
-| Swing | `swing_01`, `swing_02` | 2 | Attack whooshes |
-| Hurt | `hurt_01`, `hurt_02` | 2 | Player damage |
-| Death | `death_01` | 1 | Death / game-over stinger |
-| Pickup | `pickup_01`, `pickup_02` | 2 | Coins, items, collectibles |
-
 ## Requirements
 
-- **Python 3.9+**. Synthesis and WAV generation use the standard library; no Python packages or audio samples are needed.
-- **FFmpeg** with libvorbis and libmp3lame is required only for OGG and MP3 output.
+- [Python 3.9+](https://www.python.org/). Synthesis and WAV generation use the standard library; no Python packages or audio samples are needed.
+- [FFmpeg](https://ffmpeg.org/) with libvorbis and libmp3lame is required only for OGG and MP3 output.
+
+## Install
+
+Clone the repository:
+
+```sh
+git clone https://github.com/remarkablegames/gravitate.git
+cd gravitate
+```
 
 ## Generate
 
@@ -83,7 +66,33 @@ python3 generate.py --check-only
 
 Verification checks every WAV file under `sounds/` for mono, 16-bit, 44.1 kHz audio. It reports each file's duration, peak level, and RMS level, and exits with a nonzero status if a file is malformed, empty, or exceeds −0.5 dBFS.
 
-## Audio specifications
+## Styles
+
+4 styles:
+
+| Style | Character |
+| --- | --- |
+| `retro` | Chiptune pulse and square leads, bitcrush/sample-hold grit, arcade sweeps |
+| `modern` | Detuned saw layers, sub-bass thumps, resonant transients, soft clipping |
+| `soft` | Sine/triangle tones, gentle attacks, low-passed noise; muted and non-fatiguing |
+| `realistic` | Noise-based scuffs and impacts, resonant band-passes, pitch-dropped thumps |
+
+## Sounds
+
+Each style includes 18 sounds:
+
+| Category | Files | Variants | Use |
+| --- | --- | --- | --- |
+| Jump | `jump_01`, `jump_02` | 2 | Leaving the ground |
+| Walk | `walk_01` … `walk_04` | 4 | Rotate for footsteps |
+| Hit | `hit_light`, `hit_medium`, `hit_heavy` | 3 | Light, medium, and heavy impacts |
+| Land | `land_01`, `land_02` | 2 | Touching down after a jump |
+| Swing | `swing_01`, `swing_02` | 2 | Attack whooshes |
+| Hurt | `hurt_01`, `hurt_02` | 2 | Player damage |
+| Death | `death_01` | 1 | Death / game-over stinger |
+| Pickup | `pickup_01`, `pickup_02` | 2 | Coins, items, collectibles |
+
+## Audio Specs
 
 - 44,100 Hz, mono, 16-bit PCM WAV
 - Peak normalized to −1 dBFS (no clipping); verification allows peaks up to −0.5 dBFS
