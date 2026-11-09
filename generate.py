@@ -6,8 +6,6 @@ ffmpeg. Sounds are rendered from deterministic seeds so every run is
 reproducible.
 """
 
-from __future__ import annotations
-
 import argparse
 import json
 import math
