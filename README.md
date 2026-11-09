@@ -2,7 +2,7 @@
 
 🎵 Procedurally generated game sound effects in four audio styles.
 
-Audio synthesis uses the Python standard library. There no samples, NumPy, or SciPy. Each sound is rendered as a 44.1 kHz mono WAV master. OGG and MP3 copies are optional and require FFmpeg.
+Audio synthesized using the Python standard library (no samples, NumPy, or SciPy). Each sound is rendered as a 44.1 kHz, mono WAV master. Optional OGG and MP3 versions require FFmpeg.
 
 ## Requirements
 
