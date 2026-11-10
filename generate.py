@@ -607,8 +607,8 @@ def apply_fades(layer: list[float], fade_in: float = 0.003, fade_out: float = 0.
     return layer
 
 
-def finalize(layer: list[float]) -> list[float]:
-    """Remove DC, fade edges, and normalize to the target peak."""
+def finalize(layer: list[float], target_db: float = -1.0) -> list[float]:
+    """Remove DC, fade edges, and peak-normalize to target_db dBFS."""
     if not layer:
         return layer
     mean = sum(layer) / len(layer)
@@ -616,7 +616,7 @@ def finalize(layer: list[float]) -> list[float]:
     apply_fades(layer)
     peak = max(abs(value) for value in layer)
     if peak > 0.0:
-        gain = 10 ** (TARGET_PEAK_DBFS / 20.0) / peak
+        gain = 10 ** (target_db / 20.0) / peak
         layer = [value * gain for value in layer]
     return layer
 
@@ -682,7 +682,7 @@ def decibels(amplitude: float) -> float:
     return 20.0 * math.log10(amplitude) if amplitude > 0.0 else float("-inf")
 
 
-def generate(out_root: Path, styles: Sequence[str], formats: Sequence[str], seed: int) -> list[dict]:
+def generate(out_root: Path, styles: Sequence[str], formats: Sequence[str], seed: int, target_db: float = -1.0) -> list[dict]:
     ffmpeg = shutil.which("ffmpeg")
     encoded_formats = [fmt for fmt in formats if fmt != "wav"]
     if encoded_formats and not ffmpeg:
@@ -704,7 +704,7 @@ def generate(out_root: Path, styles: Sequence[str], formats: Sequence[str], seed
             name = f"{kind}_{variant}"
             sound_seed = seed + style_index * 1009 + sound_index * 97
             rng = random.Random(sound_seed)
-            layer = finalize(build_sound(style, kind, variant, rng))
+            layer = finalize(build_sound(style, kind, variant, rng), target_db=target_db)
 
             wav_path = style_dir / f"{name}.wav"
             write_wav(wav_path, layer)
@@ -742,6 +742,7 @@ def generate(out_root: Path, styles: Sequence[str], formats: Sequence[str], seed
         "channels": 1,
         "bits_per_sample": 16,
         "target_peak_dbfs": TARGET_PEAK_DBFS,
+        "db": target_db,
         "base_seed": seed,
         "styles": list(styles),
         "sounds": entries,
@@ -825,6 +826,13 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         help="base random seed for reproducible variation",
     )
     parser.add_argument(
+        "--db",
+        type=float,
+        default=-1.0,
+        metavar="DBFS",
+        help="target peak level in dBFS for all rendered sounds; default -1.0",
+    )
+    parser.add_argument(
         "--check",
         action="store_true",
         help="verify rendered WAV files after generating",
@@ -850,7 +858,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         f"Rendering {len(styles) * len(SOUNDS)} sounds "
         f"({', '.join(styles)}) to {args.out}/ ..."
     )
-    generate(args.out, styles, formats, args.seed)
+    generate(args.out, styles, formats, args.seed, args.db)
     print(f"\nWrote {args.out}/manifest.json")
 
     if args.check:

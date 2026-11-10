@@ -48,7 +48,13 @@ Use a specific random seed:
 python3 generate.py --seed 42
 ```
 
-The same seed produces the same rendered WAV audio when run with the same generator version and settings.
+> The same seed produces the same rendered WAV audio when run with the same generator version and settings.
+
+Adjust the volume of all rendered sounds (target peak in dBFS; lower = quieter):
+
+```sh
+python3 generate.py --db -7
+```
 
 WAV masters are always written. The `--format` option controls compressed copies: use `ogg` for WAV plus OGG, or `wav` for WAV only. If FFmpeg or a required codec is unavailable, compressed-file generation may fail; WAV masters are still written.
 
@@ -98,6 +104,7 @@ Each style includes 18 sounds:
 
 - 44,100 Hz, mono, 16-bit PCM WAV
 - Peak normalized to −1 dBFS (no clipping); verification allows peaks up to −0.5 dBFS
+- Target peak controlled with `--db` (dBFS); default `-1.0` leaves peaks unchanged
 - DC offset removed
 - 3 ms fade-in and 12 ms fade-out per sound
 - OGG Vorbis quality 5; MP3 at 192 kbps

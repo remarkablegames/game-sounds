@@ -2,6 +2,17 @@ name: build
 
 on:
   workflow_dispatch:
+    inputs:
+      seed:
+        description: 'Random seed for reproducible sounds'
+        required: false
+        type: number
+        default: 1337
+      db:
+        description: 'Target peak level in dBFS for all sounds'
+        required: false
+        type: number
+        default: -1.0
 
 permissions:
   contents: read
@@ -20,7 +31,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Generate sounds
-        run: python3 generate.py --out sounds --format all
+        run: python3 generate.py --out sounds --format all --seed ${{ inputs.seed }} --db ${{ inputs.db }}
 
       - name: Zip sounds
         run: zip -r sounds.zip sounds/
