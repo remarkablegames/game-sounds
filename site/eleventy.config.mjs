@@ -1,4 +1,4 @@
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("sounds");
 
@@ -10,4 +10,4 @@ module.exports = function (eleventyConfig) {
       data: "_data",
     },
   };
-};
+}
