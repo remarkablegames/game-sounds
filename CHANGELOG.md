@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.0](https://github.com/remarkablegames/game-sounds/compare/v0.1.1...v0.2.0) (2026-11-10)
+
+
+### Features
+
+* add UI, outcomes, and gameplay sounds ([d228cdf](https://github.com/remarkablegames/game-sounds/commit/d228cdf00abf881b5e8500d2cbd78dd9c133a478))
+
+
+### Bug Fixes
+
+* rework land in all four styles ([4abcccd](https://github.com/remarkablegames/game-sounds/commit/4abcccd2101836e2b3a162ecd1802bb1ba29a62a))
+* update modern/soft defeat, retro level_up, and realistic powerup ([93b24ac](https://github.com/remarkablegames/game-sounds/commit/93b24acf3ca1689b3fd48c434477b73e594a6003))
+
 ## [0.1.1](https://github.com/remarkablegames/game-sounds/compare/v0.1.0...v0.1.1) (2026-11-10)
 
 
