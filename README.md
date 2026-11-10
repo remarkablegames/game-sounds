@@ -92,25 +92,25 @@ Each style includes 39 sounds:
 | --- | --- | --- |
 | _Jump_ | Leaving the ground | `jump_01`, `jump_02` |
 | _Walk_ | Rotate for footsteps | `walk_01`, `walk_02`, `walk_03`, `walk_04` |
-| _Hit_ | Light, medium, and heavy impacts | `hit_light`, `hit_medium`, `hit_heavy` |
 | _Land_ | Touching down after a jump | `land_01`, `land_02` |
+| _Dash_ | Quick dodge or sprint burst | `dash` |
+| _Hit_ | Light, medium, and heavy impacts | `hit_light`, `hit_medium`, `hit_heavy` |
 | _Swing_ | Attack whooshes | `swing_01`, `swing_02` |
-| _Hurt_ | Player damage | `hurt_01`, `hurt_02` |
-| _Death_ | Death / game-over stinger | `death_01` |
-| _Pickup_ | Coins, items, collectibles | `pickup_01`, `pickup_02` |
-| _UI_ | Menus, buttons, and alerts | `ui_click_01`, `ui_hover_01`, `ui_confirm_01`, `ui_back_01`, `ui_error_01`, `ui_open_01`, `ui_close_01`, `ui_notification_01` |
-| _Victory_ | Win / level complete | `victory_01` |
-| _Defeat_ | Loss / round over | `defeat_01` |
-| _Level Up_ | Character or skill progression | `level_up_01` |
-| _Achievement_ | Unlocks, trophies, and rewards | `achievement_01` |
 | _Shoot_ | Projectiles and laser fire | `shoot_01`, `shoot_02` |
-| _Explosion_ | Blasts and heavy impacts | `explosion_01` |
-| _Powerup_ | Rising buff or upgrade sweep | `powerup_01` |
-| _Shield_ | Block, guard, or deflect | `shield_01` |
-| _Dash_ | Quick dodge or sprint burst | `dash_01` |
-| _Heal_ | Restoring health or healing magic | `heal_01` |
-| _Alert_ | Enemy spotted or warning | `enemy_alert_01` |
-| _Splash_ | Water entry or splash | `splash_01` |
+| _Explosion_ | Blasts and heavy impacts | `explosion` |
+| _Shield_ | Block, guard, or deflect | `shield` |
+| _Alert_ | Enemy spotted or warning | `enemy_alert` |
+| _Pickup_ | Coins, items, collectibles | `pickup_01`, `pickup_02` |
+| _Powerup_ | Rising buff or upgrade sweep | `powerup` |
+| _Heal_ | Restoring health or healing magic | `heal` |
+| _Splash_ | Water entry or splash | `splash` |
+| _Hurt_ | Player damage | `hurt_01`, `hurt_02` |
+| _Death_ | Death / game-over stinger | `death` |
+| _UI_ | Menus, buttons, and alerts | `ui_click`, `ui_hover`, `ui_confirm`, `ui_back`, `ui_error`, `ui_open`, `ui_close`, `ui_notification` |
+| _Victory_ | Win / level complete | `victory` |
+| _Defeat_ | Loss / round over | `defeat` |
+| _Level Up_ | Character or skill progression | `level_up` |
+| _Achievement_ | Unlocks, trophies, and rewards | `achievement` |
 
 ## Audio Specs
 
