@@ -493,29 +493,88 @@ def make_land(style: str, rng: random.Random, variant: str) -> list[float]:
     number = int(variant)
 
     if style == "retro":
-        duration = 0.13 + 0.015 * number
-        body = tone(
-            duration, 190 - 10 * number, 65, "square", duty=0.5, attack=0.001, tau=0.035
+        duration = 0.26 + 0.02 * number
+        impact = tone(
+            duration,
+            150.0 - 6.0 * number,
+            55.0,
+            "square",
+            duty=0.5,
+            attack=0.001,
+            tau=0.045,
         )
-        grit = bitcrush(noise(0.07, rng, 0.001, 0.02), bits=6, hold=3)
-        return mix(body, scale(grit, 0.45))
+        settle = tone(
+            0.16, 92.0 - 4.0 * number, 42.0, "square", duty=0.5, attack=0.002, tau=0.07
+        )
+        tail = tone(0.18, 60.0, 40.0, "square", duty=0.25, attack=0.004, tau=0.14)
+        grit = bitcrush(noise(0.14, rng, 0.001, 0.05), bits=6, hold=3)
+        crack = highpass(noise(0.025, rng, 0.0005, 0.007), 2500)
+        return bitcrush(
+            mix(
+                scale(impact, 0.8),
+                scale(offset(settle, 0.045), 0.55),
+                scale(offset(tail, 0.05), 0.35),
+                scale(grit, 0.5),
+                scale(crack, 0.25),
+            ),
+            bits=6,
+            hold=2,
+        )
 
     if style == "modern":
-        duration = 0.18
-        body = tone(duration, 130 - 5 * number, 50, "sine", attack=0.0015, tau=0.06)
-        scuff = bandpass(noise(0.10, rng, 0.002, 0.035), 400, 2400)
-        return softclip(lowpass(mix(scale(body, 0.8), scale(scuff, 0.45)), 5000), 1.2)
+        duration = 0.28
+        impact = tone(
+            duration, 98.0 - 4.0 * number, 42.0, "sine", attack=0.0015, tau=0.07
+        )
+        settle = tone(0.2, 70.0 - 3.0 * number, 34.0, "sine", attack=0.002, tau=0.12)
+        tail = tone(0.18, 48.0, 30.0, "sine", attack=0.004, tau=0.18)
+        scuff = bandpass(noise(0.12, rng, 0.002, 0.045), 400, 2600)
+        crack = highpass(noise(0.03, rng, 0.0005, 0.009), 2000)
+        debris = bandpass(noise(0.18, rng, 0.004, 0.08), 700, 3500)
+        body = mix(
+            scale(impact, 0.85),
+            scale(offset(settle, 0.05), 0.6),
+            scale(offset(tail, 0.04), 0.35),
+            scale(scuff, 0.5),
+            scale(crack, 0.3),
+            scale(debris, 0.2),
+        )
+        return softclip(lowpass(body, 5000), 1.3)
 
     if style == "soft":
-        duration = 0.22
-        body = tone(duration, 105 - 4 * number, 50, "sine", attack=0.006, tau=0.075)
-        scuff = lowpass(noise(0.12, rng, 0.005, 0.04), 1000)
-        return lowpass(mix(body, scale(scuff, 0.3)), 2200)
+        duration = 0.34
+        impact = tone(
+            duration, 88.0 - 3.0 * number, 42.0, "sine", attack=0.005, tau=0.1
+        )
+        settle = tone(0.22, 62.0 - 3.0 * number, 34.0, "sine", attack=0.006, tau=0.16)
+        tail = tone(0.2, 44.0, 30.0, "sine", attack=0.008, tau=0.2)
+        scuff = lowpass(noise(0.16, rng, 0.005, 0.07), 1200)
+        dust = lowpass(noise(0.2, rng, 0.01, 0.1), 600)
+        body = mix(
+            impact,
+            scale(offset(settle, 0.055), 0.55),
+            scale(offset(tail, 0.05), 0.3),
+            scale(scuff, 0.35),
+            scale(dust, 0.2),
+        )
+        return lowpass(body, 2200)
 
-    duration = 0.20
-    body = tone(duration, 105 - 4 * number, 45, "sine", attack=0.002, tau=0.06)
-    scuff = bandpass(noise(0.12, rng, 0.003, 0.04), 500, 2800)
-    return lowpass(mix(scale(body, 0.75), scale(scuff, 0.7)), 6000)
+    duration = 0.3
+    impact = tone(duration, 84.0 - 3.0 * number, 38.0, "sine", attack=0.002, tau=0.07)
+    settle = tone(0.22, 62.0 - 2.0 * number, 32.0, "sine", attack=0.002, tau=0.14)
+    scuff = bandpass(noise(0.14, rng, 0.003, 0.05), 450, 2600)
+    debris = bandpass(noise(0.2, rng, 0.004, 0.09), 700, 3200)
+    resonance = resonant_bandpass(noise(0.12, rng, 0.002, 0.05), 240.0, q=1.5)
+    crack = bandpass(noise(0.03, rng, 0.0005, 0.01), 1500, 7000)
+    body = mix(
+        scale(impact, 0.8),
+        scale(offset(settle, 0.05), 0.6),
+        scale(scuff, 0.7),
+        scale(debris, 0.3),
+        scale(resonance, 0.35),
+        scale(crack, 0.3),
+    )
+    return lowpass(body, 6000)
 
 
 def make_swing(style: str, rng: random.Random, variant: str) -> list[float]:
