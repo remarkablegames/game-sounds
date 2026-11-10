@@ -14,8 +14,6 @@ Audio is synthesized using the Python standard library (no samples or dependenci
 - [Python 3.10+](https://www.python.org/). Synthesis and WAV generation use the standard library; no Python packages or audio samples are needed.
 - [FFmpeg](https://ffmpeg.org/) with `libvorbis` and `libmp3lame` is required only for OGG and MP3 output.
 
-## Install
-
 Clone the repository:
 
 ```sh
@@ -24,8 +22,6 @@ cd game-sounds
 ```
 
 ## Generate
-
-Run these commands from the project directory, where `generate.py` is located. Generated files are written under `sounds/`.
 
 Generate the full pack, including WAV, OGG, and MP3:
 
@@ -56,7 +52,7 @@ python3 generate.py --seed 42
 Adjust the volume of all rendered sounds (target peak in dBFS; lower = quieter):
 
 ```sh
-python3 generate.py --db -7
+python3 generate.py --db -1
 ```
 
 WAV masters are always written. The `--format` option controls compressed copies: use `ogg` for WAV plus OGG, or `wav` for WAV only. If FFmpeg or a required codec is unavailable, compressed-file generation may fail; WAV masters are still written.
@@ -81,12 +77,12 @@ Verification checks every WAV file under `sounds/` for mono, 16-bit, 44.1 kHz au
 
 4 styles:
 
-| Style | Character |
+| Style | Description |
 | --- | --- |
-| `retro` | Chiptune pulse and square leads, bitcrush/sample-hold grit, arcade sweeps |
-| `modern` | Detuned saw layers, sub-bass thumps, resonant transients, soft clipping |
-| `soft` | Sine/triangle tones, gentle attacks, low-passed noise; muted and non-fatiguing |
-| `realistic` | Noise-based scuffs and impacts, resonant band-passes, pitch-dropped thumps |
+| retro | Chiptune pulse and square leads, bitcrush/sample-hold grit, arcade sweeps |
+| modern | Detuned saw layers, sub-bass thumps, resonant transients, soft clipping |
+| soft | Sine/triangle tones, gentle attacks, low-passed noise; muted and non-fatiguing |
+| realistic | Noise-based scuffs and impacts, resonant band-passes, pitch-dropped thumps |
 
 ## Sounds
 
@@ -115,7 +111,7 @@ Each style includes 18 sounds:
 
 ```
 sounds/
-├── manifest.json # metadata for the most recent generation
+├── manifest.json # metadata for the latest generation
 ├── retro/
 │   ├── jump_01.wav / .ogg / .mp3
 │   ├── walk_01.wav / .ogg / .mp3
@@ -125,8 +121,6 @@ sounds/
 ├── soft/
 └── realistic/
 ```
-
-Compressed files are present only when generated using the relevant output format.
 
 ## Manifest
 
