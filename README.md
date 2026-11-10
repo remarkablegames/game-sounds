@@ -19,8 +19,8 @@ Audio is synthesized using the Python standard library (no samples or dependenci
 Clone the repository:
 
 ```sh
-git clone https://github.com/remarkablegames/gravitate.git
-cd gravitate
+git clone https://github.com/remarkablegames/game-sounds.git
+cd game-sounds
 ```
 
 ## Generate
