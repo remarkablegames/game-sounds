@@ -86,7 +86,7 @@ Verification checks every WAV file under `sounds/` for mono, 16-bit, 44.1 kHz au
 
 ## Sounds
 
-Each style includes 18 sounds:
+Each style includes 39 sounds:
 
 | Category | Files | Variants | Use |
 | --- | --- | --- | --- |
@@ -98,6 +98,19 @@ Each style includes 18 sounds:
 | Hurt | `hurt_01`, `hurt_02` | 2 | Player damage |
 | Death | `death_01` | 1 | Death / game-over stinger |
 | Pickup | `pickup_01`, `pickup_02` | 2 | Coins, items, collectibles |
+| UI | `ui_click_01`, `ui_hover_01`, `ui_confirm_01`, `ui_back_01`, `ui_error_01`, `ui_open_01`, `ui_close_01`, `ui_notification_01` | 8 | Menus, buttons, and alerts |
+| Victory | `victory_01` | 1 | Win / level complete |
+| Defeat | `defeat_01` | 1 | Loss / round over |
+| Level Up | `level_up_01` | 1 | Character or skill progression |
+| Achievement | `achievement_01` | 1 | Unlocks, trophies, and rewards |
+| Shoot | `shoot_01`, `shoot_02` | 2 | Projectiles and laser fire |
+| Explosion | `explosion_01` | 1 | Blasts and heavy impacts |
+| Powerup | `powerup_01` | 1 | Rising buff or upgrade sweep |
+| Shield | `shield_01` | 1 | Block, guard, or deflect |
+| Dash | `dash_01` | 1 | Quick dodge or sprint burst |
+| Heal | `heal_01` | 1 | Restoring health or healing magic |
+| Alert | `enemy_alert_01` | 1 | Enemy spotted or warning |
+| Splash | `splash_01` | 1 | Water entry or splash |
 
 ## Audio Specs
 
