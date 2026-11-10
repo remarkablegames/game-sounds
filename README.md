@@ -140,4 +140,4 @@ The manifest records metadata for the most recent generation run. If you generat
 
 ## License
 
-[LICENSE](LICENSE)
+[MIT](LICENSE)
