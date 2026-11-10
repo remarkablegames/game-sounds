@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/remarkablegames/game-sounds/compare/v0.1.0...v0.1.1) (2026-11-10)
+
+
+### Documentation
+
+* **readme:** update license ([4dc5d3a](https://github.com/remarkablegames/game-sounds/commit/4dc5d3a02b807f6c6d43ee76623b800bb7737a8d))
+
 ## 0.1.0 (2026-11-10)
 
 
