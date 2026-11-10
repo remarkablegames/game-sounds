@@ -19,7 +19,6 @@ from collections.abc import Iterable, Sequence
 from pathlib import Path
 
 SAMPLE_RATE = 44_100
-TARGET_PEAK_DBFS = -1.0
 BASE_SEED = 1337
 STYLES = ("retro", "modern", "soft", "realistic")
 FORMATS = ("wav", "ogg", "mp3")
@@ -854,7 +853,6 @@ def generate(
         "sample_rate": SAMPLE_RATE,
         "channels": 1,
         "bits_per_sample": 16,
-        "target_peak_dbfs": TARGET_PEAK_DBFS,
         "db": db,
         "base_seed": seed,
         "styles": list(styles),
