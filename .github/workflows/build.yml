@@ -39,5 +39,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:
-          name: game-sounds
+          name: sounds
           path: sounds.zip

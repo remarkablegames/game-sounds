@@ -1,0 +1,50 @@
+name: release-please
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Release Please
+        uses: googleapis/release-please-action@v5
+        id: release
+        with:
+          release-type: python
+
+  upload:
+    needs: release
+    if: ${{ needs.release.outputs.release_created }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Generate sounds
+        run: python3 generate.py --out sounds --format all
+
+      - name: Zip sounds
+        run: zip -r sounds.zip sounds/
+
+      - name: Upload release artifact
+        run: gh release upload ${{ needs.release.outputs.tag_name }} sounds.zip
+        env:
+          GH_TOKEN: ${{ github.token }}
