@@ -4,8 +4,8 @@
 
 🎵 Procedurally generated game sound effects in 4 audio styles:
 
-- [Listen to sounds](https://remarkablegames.org/game-sounds/)
-- [Download all sounds](https://github.com/remarkablegames/game-sounds/releases/latest/download/sounds.zip)
+- [Demo](https://remarkablegames.org/game-sounds/)
+- [Download](https://github.com/remarkablegames/game-sounds/releases/latest/download/sounds.zip)
 
 Audio is synthesized using the Python standard library (no samples or dependencies). Each sound is rendered as a 44.1 kHz mono WAV master, with optional OGG and MP3 versions.
 
