@@ -15,8 +15,8 @@ import subprocess
 import sys
 import wave
 from array import array
+from collections.abc import Iterable, Sequence
 from pathlib import Path
-from typing import Iterable, Sequence
 
 SAMPLE_RATE = 44_100
 TARGET_PEAK_DBFS = -1.0
@@ -53,7 +53,7 @@ SOUNDS: tuple[tuple[str, str], ...] = (
 
 
 def samples_for(duration: float) -> int:
-    return max(1, int(round(duration * SAMPLE_RATE)))
+    return max(1, round(duration * SAMPLE_RATE))
 
 
 def silence(duration: float) -> list[float]:
@@ -130,7 +130,9 @@ def tone(
     """Oscillator with an exponential pitch glide and an optional envelope."""
     n = samples_for(duration)
     if env is None:
-        env = perc_env(n, attack, tau if tau is not None else max(0.02, duration * 0.35))
+        env = perc_env(
+            n, attack, tau if tau is not None else max(0.02, duration * 0.35)
+        )
 
     f_start = max(1.0, f_start)
     f_end = max(1.0, f_end)
@@ -141,7 +143,9 @@ def tone(
         t = index / (n - 1) if n > 1 else 0.0
         frequency = f_start * (ratio**t)
         if vibrato:
-            frequency *= 1.0 + vibrato * math.sin(TAU * vibrato_rate * index / SAMPLE_RATE)
+            frequency *= 1.0 + vibrato * math.sin(
+                TAU * vibrato_rate * index / SAMPLE_RATE
+            )
         phase += frequency / SAMPLE_RATE
         out[index] = wave_sample(kind, phase, duty) * env[index]
     return out
@@ -214,7 +218,9 @@ def moving_lowpass(layer: Sequence[float], f_start: float, f_end: float) -> list
     return out
 
 
-def resonant_bandpass(layer: Sequence[float], frequency: float, q: float = 1.0) -> list[float]:
+def resonant_bandpass(
+    layer: Sequence[float], frequency: float, q: float = 1.0
+) -> list[float]:
     """RBJ biquad band-pass (constant skirt gain, peak gain = Q)."""
     w0 = TAU * frequency / SAMPLE_RATE
     alpha = math.sin(w0) / (2.0 * q)
@@ -297,7 +303,11 @@ def sequence(
 ) -> list[float]:
     out: list[float] = []
     for frequency, duration in notes:
-        out.extend(tone(duration, frequency, frequency, kind, duty=duty, attack=attack, tau=tau))
+        out.extend(
+            tone(
+                duration, frequency, frequency, kind, duty=duty, attack=attack, tau=tau
+            )
+        )
     return out
 
 
@@ -314,9 +324,13 @@ def make_jump(style: str, rng: random.Random, variant: str) -> list[float]:
         base = 220 if number == 1 else 262
         top = 880 if number == 1 else 1047
         lead = tone(duration, base, top, "square", duty=0.5, attack=0.002, tau=0.075)
-        harmony = tone(duration, base * 2, top * 2, "square", duty=0.125, attack=0.002, tau=0.05)
+        harmony = tone(
+            duration, base * 2, top * 2, "square", duty=0.125, attack=0.002, tau=0.05
+        )
         air = highpass(noise(0.05, rng, 0.001, 0.012), 2500)
-        return bitcrush(mix(lead, scale(harmony, 0.3), scale(air, 0.18)), bits=7, hold=2)
+        return bitcrush(
+            mix(lead, scale(harmony, 0.3), scale(air, 0.18)), bits=7, hold=2
+        )
 
     if style == "modern":
         duration = 0.20
@@ -352,7 +366,9 @@ def make_walk(style: str, rng: random.Random, variant: str) -> list[float]:
 
     if style == "retro":
         duration = 0.07 + 0.008 * number
-        thump = tone(duration, 165 - 7 * number, 70, "square", duty=0.5, attack=0.001, tau=0.022)
+        thump = tone(
+            duration, 165 - 7 * number, 70, "square", duty=0.5, attack=0.001, tau=0.022
+        )
         scuff = bitcrush(noise(duration * 0.85, rng, 0.001, 0.016), bits=6, hold=3)
         return mix(thump, scale(scuff, 0.55))
 
@@ -360,7 +376,9 @@ def make_walk(style: str, rng: random.Random, variant: str) -> list[float]:
         duration = 0.10
         thump = tone(duration, 120 + 5 * number, 55, "sine", attack=0.0015, tau=0.04)
         scuff = bandpass(noise(0.075, rng, 0.0015, 0.022), 500, 2800)
-        tick = tone(0.018, 1900 + 90 * number, 1300, "triangle", attack=0.0005, tau=0.006)
+        tick = tone(
+            0.018, 1900 + 90 * number, 1300, "triangle", attack=0.0005, tau=0.006
+        )
         body = mix(scale(thump, 0.85), scale(scuff, 0.45), scale(tick, 0.12))
         return softclip(body, 1.1)
 
@@ -384,28 +402,61 @@ def make_hit(style: str, rng: random.Random, weight: str) -> list[float]:
     f_end = (75.0, 58.0, 42.0)[index]
 
     if style == "retro":
-        body = tone(duration, f_start, f_end, "square", duty=0.5, attack=0.001, tau=0.045 + 0.02 * index)
+        body = tone(
+            duration,
+            f_start,
+            f_end,
+            "square",
+            duty=0.5,
+            attack=0.001,
+            tau=0.045 + 0.02 * index,
+        )
         crunch = noise(duration * 0.6, rng, 0.0005, 0.018 + 0.006 * index)
         layers = [body, scale(crunch, 0.65 + 0.15 * index)]
         if index > 0:
-            layers.append(scale(tone(duration, f_start * 2, f_end * 2, "saw", attack=0.001, tau=0.03), 0.22))
+            layers.append(
+                scale(
+                    tone(
+                        duration, f_start * 2, f_end * 2, "saw", attack=0.001, tau=0.03
+                    ),
+                    0.22,
+                )
+            )
         return bitcrush(mix(*layers), bits=6, hold=2)
 
     if style == "modern":
-        sub = tone(duration, f_start, f_end, "sine", attack=0.001, tau=0.06 + 0.035 * index)
+        sub = tone(
+            duration, f_start, f_end, "sine", attack=0.001, tau=0.06 + 0.035 * index
+        )
         transient = highpass(noise(0.07, rng, 0.0005, 0.012 + 0.006 * index), 1400)
-        body = tone(duration * 0.7, f_start * 1.4, f_end * 1.6, "saw", attack=0.0015, tau=0.04 + 0.025 * index)
+        body = tone(
+            duration * 0.7,
+            f_start * 1.4,
+            f_end * 1.6,
+            "saw",
+            attack=0.0015,
+            tau=0.04 + 0.025 * index,
+        )
         layers = [sub, scale(transient, 0.55), scale(lowpass(body, 3200), 0.35)]
         return lowpass(softclip(mix(*layers), 1.6 + 0.3 * index), 7000)
 
     if style == "soft":
-        thump = tone(duration, f_start * 0.7, f_end * 0.8, "sine", attack=0.004, tau=0.055 + 0.03 * index)
+        thump = tone(
+            duration,
+            f_start * 0.7,
+            f_end * 0.8,
+            "sine",
+            attack=0.004,
+            tau=0.055 + 0.03 * index,
+        )
         scuff = lowpass(noise(duration * 0.7, rng, 0.003, 0.03 + 0.02 * index), 1500)
         return lowpass(mix(thump, scale(scuff, 0.3)), 3000)
 
     transient = bandpass(noise(0.08, rng, 0.0005, 0.012 + 0.005 * index), 900, 5000)
     sub = tone(duration, f_start, f_end, "sine", attack=0.001, tau=0.055 + 0.03 * index)
-    resonance = resonant_bandpass(noise(duration * 0.7, rng, 0.001, 0.04 + 0.03 * index), 170 + 20 * index, q=1.8)
+    resonance = resonant_bandpass(
+        noise(duration * 0.7, rng, 0.001, 0.04 + 0.03 * index), 170 + 20 * index, q=1.8
+    )
     layers = [scale(transient, 0.8), scale(sub, 0.75), scale(resonance, 0.35)]
     if index == 2:
         debris = bandpass(noise(0.28, rng, 0.002, 0.12), 700, 3500)
@@ -418,7 +469,9 @@ def make_land(style: str, rng: random.Random, variant: str) -> list[float]:
 
     if style == "retro":
         duration = 0.13 + 0.015 * number
-        body = tone(duration, 190 - 10 * number, 65, "square", duty=0.5, attack=0.001, tau=0.035)
+        body = tone(
+            duration, 190 - 10 * number, 65, "square", duty=0.5, attack=0.001, tau=0.035
+        )
         grit = bitcrush(noise(0.07, rng, 0.001, 0.02), bits=6, hold=3)
         return mix(body, scale(grit, 0.45))
 
@@ -451,7 +504,14 @@ def make_swing(style: str, rng: random.Random, variant: str) -> list[float]:
     whoosh = moving_lowpass(whoosh, 500 + 100 * number, 2600 + 700 * number)
 
     if style == "retro":
-        tonal = tone(duration, 260 + 40 * number, 700 + 100 * number, "square", duty=0.25, env=env)
+        tonal = tone(
+            duration,
+            260 + 40 * number,
+            700 + 100 * number,
+            "square",
+            duty=0.25,
+            env=env,
+        )
         return bitcrush(mix(scale(whoosh, 1.0), scale(tonal, 0.25)), bits=7, hold=2)
 
     if style == "modern":
@@ -470,7 +530,15 @@ def make_hurt(style: str, rng: random.Random, variant: str) -> list[float]:
 
     if style == "retro":
         duration = 0.16 + 0.02 * number
-        lead = tone(duration, 520 - 40 * number, 180, "square", duty=0.25, attack=0.002, tau=0.06)
+        lead = tone(
+            duration,
+            520 - 40 * number,
+            180,
+            "square",
+            duty=0.25,
+            attack=0.002,
+            tau=0.06,
+        )
         hit = noise(0.05, rng, 0.0005, 0.012)
         return bitcrush(mix(lead, scale(hit, 0.4)), bits=6, hold=2)
 
@@ -478,7 +546,11 @@ def make_hurt(style: str, rng: random.Random, variant: str) -> list[float]:
         duration = 0.22
         lead = tone(duration, 420 - 30 * number, 130, "saw", attack=0.004, tau=0.09)
         sub = tone(duration, 160, 75, "sine", attack=0.003, tau=0.11)
-        body = mix(scale(lead, 0.45), scale(sub, 0.4), scale(noise(0.06, rng, 0.001, 0.015), 0.25))
+        body = mix(
+            scale(lead, 0.45),
+            scale(sub, 0.4),
+            scale(noise(0.06, rng, 0.001, 0.015), 0.25),
+        )
         return softclip(lowpass(body, 4000), 1.5)
 
     if style == "soft":
@@ -508,9 +580,20 @@ def make_death(style: str, rng: random.Random) -> list[float]:
 
     if style == "modern":
         duration = 0.85
-        lead = tone(duration, 380, 45, "saw", attack=0.005, tau=0.35, vibrato=0.01, vibrato_rate=5)
+        lead = tone(
+            duration,
+            380,
+            45,
+            "saw",
+            attack=0.005,
+            tau=0.35,
+            vibrato=0.01,
+            vibrato_rate=5,
+        )
         sub = tone(duration, 190, 32, "sine", attack=0.005, tau=0.4)
-        body = mix(scale(lead, 0.4), scale(sub, 0.5), scale(noise(0.3, rng, 0.01, 0.18), 0.15))
+        body = mix(
+            scale(lead, 0.4), scale(sub, 0.5), scale(noise(0.3, rng, 0.01, 0.18), 0.15)
+        )
         return softclip(lowpass(body, 3500), 1.4)
 
     if style == "soft":
@@ -534,7 +617,9 @@ def make_pickup(style: str, rng: random.Random, variant: str) -> list[float]:
             notes = ((988.0, 0.055), (1319.0, 0.14))
         else:
             notes = ((880.0, 0.05), (1109.0, 0.05), (1319.0, 0.14))
-        return bitcrush(sequence(notes, "square", duty=0.25, attack=0.001, tau=0.09), bits=7, hold=2)
+        return bitcrush(
+            sequence(notes, "square", duty=0.25, attack=0.001, tau=0.09), bits=7, hold=2
+        )
 
     if style == "modern":
         if number == 1:
@@ -543,7 +628,14 @@ def make_pickup(style: str, rng: random.Random, variant: str) -> list[float]:
             notes = ((880.0, 0.07), (1175.0, 0.07), (1760.0, 0.20))
         out: list[float] = []
         for frequency, duration in notes:
-            out.extend(bell(duration, frequency, ratios=(1.0, 2.0, 3.01), gains=(1.0, 0.35, 0.15)))
+            out.extend(
+                bell(
+                    duration,
+                    frequency,
+                    ratios=(1.0, 2.0, 3.01),
+                    gains=(1.0, 0.35, 0.15),
+                )
+            )
         return softclip(lowpass(out, 8000), 1.1)
 
     if style == "soft":
@@ -593,22 +685,28 @@ def build_sound(style: str, kind: str, variant: str, rng: random.Random) -> list
 # ---------------------------------------------------------------------------
 
 
-def apply_fades(layer: list[float], fade_in: float = 0.003, fade_out: float = 0.012) -> list[float]:
+def apply_fades(
+    layer: list[float], fade_in: float = 0.003, fade_out: float = 0.012
+) -> list[float]:
     n = len(layer)
     fade_in_samples = min(n, samples_for(fade_in))
     fade_out_samples = min(n, samples_for(fade_out))
 
     if fade_in_samples > 1:
         for index in range(fade_in_samples):
-            layer[index] *= 0.5 - 0.5 * math.cos(math.pi * index / (fade_in_samples - 1))
+            layer[index] *= 0.5 - 0.5 * math.cos(
+                math.pi * index / (fade_in_samples - 1)
+            )
     if fade_out_samples > 1:
         for index in range(fade_out_samples):
-            layer[n - 1 - index] *= 0.5 - 0.5 * math.cos(math.pi * index / (fade_out_samples - 1))
+            layer[n - 1 - index] *= 0.5 - 0.5 * math.cos(
+                math.pi * index / (fade_out_samples - 1)
+            )
     return layer
 
 
-def finalize(layer: list[float], target_db: float = -1.0) -> list[float]:
-    """Remove DC, fade edges, and peak-normalize to target_db dBFS."""
+def finalize(layer: list[float], db: float = -6.0) -> list[float]:
+    """Remove DC, fade edges, and peak-normalize to target db dBFS."""
     if not layer:
         return layer
     mean = sum(layer) / len(layer)
@@ -616,7 +714,7 @@ def finalize(layer: list[float], target_db: float = -1.0) -> list[float]:
     apply_fades(layer)
     peak = max(abs(value) for value in layer)
     if peak > 0.0:
-        gain = 10 ** (target_db / 20.0) / peak
+        gain = 10 ** (db / 20.0) / peak
         layer = [value * gain for value in layer]
     return layer
 
@@ -624,7 +722,7 @@ def finalize(layer: list[float], target_db: float = -1.0) -> list[float]:
 def write_wav(path: Path, layer: Sequence[float]) -> None:
     pcm = array(
         "h",
-        (max(-32768, min(32767, int(round(value * 32767)))) for value in layer),
+        (max(-32768, min(32767, round(value * 32767))) for value in layer),
     )
     if sys.byteorder != "little":
         pcm.byteswap()
@@ -640,7 +738,9 @@ def read_wav(path: Path) -> list[float]:
         if handle.getnchannels() != 1 or handle.getsampwidth() != 2:
             raise ValueError(f"{path}: expected mono 16-bit WAV")
         if handle.getframerate() != SAMPLE_RATE:
-            raise ValueError(f"{path}: expected {SAMPLE_RATE} Hz, got {handle.getframerate()}")
+            raise ValueError(
+                f"{path}: expected {SAMPLE_RATE} Hz, got {handle.getframerate()}"
+            )
         raw = handle.readframes(handle.getnframes())
     pcm = array("h")
     pcm.frombytes(raw)
@@ -671,9 +771,11 @@ def encode(wav_path: Path, fmt: str, destination: Path) -> None:
         *codec,
         str(destination),
     ]
-    result = subprocess.run(command, capture_output=True, text=True)
+    result = subprocess.run(command, check=False, capture_output=True, text=True)
     if result.returncode != 0:
-        raise RuntimeError(result.stderr.strip() or f"ffmpeg exited with {result.returncode}")
+        raise RuntimeError(
+            result.stderr.strip() or f"ffmpeg exited with {result.returncode}"
+        )
     if not destination.exists() or destination.stat().st_size == 0:
         raise RuntimeError("encoder produced no output")
 
@@ -682,7 +784,13 @@ def decibels(amplitude: float) -> float:
     return 20.0 * math.log10(amplitude) if amplitude > 0.0 else float("-inf")
 
 
-def generate(out_root: Path, styles: Sequence[str], formats: Sequence[str], seed: int, target_db: float = -1.0) -> list[dict]:
+def generate(
+    out_root: Path,
+    styles: Sequence[str],
+    formats: Sequence[str],
+    seed: int,
+    db: float = -6.0,
+) -> list[dict]:
     ffmpeg = shutil.which("ffmpeg")
     encoded_formats = [fmt for fmt in formats if fmt != "wav"]
     if encoded_formats and not ffmpeg:
@@ -704,7 +812,7 @@ def generate(out_root: Path, styles: Sequence[str], formats: Sequence[str], seed
             name = f"{kind}_{variant}"
             sound_seed = seed + style_index * 1009 + sound_index * 97
             rng = random.Random(sound_seed)
-            layer = finalize(build_sound(style, kind, variant, rng), target_db=target_db)
+            layer = finalize(build_sound(style, kind, variant, rng), db=db)
 
             wav_path = style_dir / f"{name}.wav"
             write_wav(wav_path, layer)
@@ -716,7 +824,10 @@ def generate(out_root: Path, styles: Sequence[str], formats: Sequence[str], seed
                     encode(wav_path, fmt, destination)
                     files.append(str(destination.relative_to(out_root)))
                 except Exception as error:  # noqa: BLE001 - keep generating the pack
-                    print(f"warning: could not encode {style}/{name}.{fmt}: {error}", file=sys.stderr)
+                    print(
+                        f"warning: could not encode {style}/{name}.{fmt}: {error}",
+                        file=sys.stderr,
+                    )
 
             peak = max(abs(value) for value in layer)
             rms = math.sqrt(sum(value * value for value in layer) / len(layer))
@@ -735,19 +846,23 @@ def generate(out_root: Path, styles: Sequence[str], formats: Sequence[str], seed
             )
 
             done += 1
-            print(f"[{done:>3}/{total}] {style}/{name:<12} {len(layer) / SAMPLE_RATE:5.2f}s")
+            print(
+                f"[{done:>3}/{total}] {style}/{name:<12} {len(layer) / SAMPLE_RATE:5.2f}s"
+            )
 
     manifest = {
         "sample_rate": SAMPLE_RATE,
         "channels": 1,
         "bits_per_sample": 16,
         "target_peak_dbfs": TARGET_PEAK_DBFS,
-        "db": target_db,
+        "db": db,
         "base_seed": seed,
         "styles": list(styles),
         "sounds": entries,
     }
-    (out_root / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    (out_root / "manifest.json").write_text(
+        json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
+    )
     return entries
 
 
@@ -774,7 +889,9 @@ def check_outputs(out_root: Path) -> int:
         peak_dbfs = decibels(peak)
 
         relative = path.relative_to(out_root)
-        print(f"{str(relative):<30} {len(layer) / SAMPLE_RATE:7.2f}s {peak_dbfs:9.2f} {decibels(rms):8.2f}")
+        print(
+            f"{relative!s:<30} {len(layer) / SAMPLE_RATE:7.2f}s {peak_dbfs:9.2f} {decibels(rms):8.2f}"
+        )
 
         if peak_dbfs > -0.5:
             failures.append(f"{relative}: peak {peak_dbfs:.2f} dBFS is too hot")
@@ -828,9 +945,9 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--db",
         type=float,
-        default=-1.0,
+        default=-6.0,
         metavar="DBFS",
-        help="target peak level in dBFS for all rendered sounds; default -1.0",
+        help="target peak level in dBFS for all rendered sounds; default -6.0",
     )
     parser.add_argument(
         "--check",

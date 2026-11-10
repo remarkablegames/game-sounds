@@ -103,8 +103,7 @@ Each style includes 18 sounds:
 ## Audio Specs
 
 - 44,100 Hz, mono, 16-bit PCM WAV
-- Peak normalized to −1 dBFS (no clipping); verification allows peaks up to −0.5 dBFS
-- Target peak controlled with `--db` (dBFS); default `-1.0` leaves peaks unchanged
+- Peak normalized to −6 dBFS by default (no clipping)
 - DC offset removed
 - 3 ms fade-in and 12 ms fade-out per sound
 - OGG Vorbis quality 5; MP3 at 192 kbps
