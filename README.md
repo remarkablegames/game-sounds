@@ -79,38 +79,38 @@ Verification checks every WAV file under `sounds/` for mono, 16-bit, 44.1 kHz au
 
 | Style | Description |
 | --- | --- |
-| retro | Chiptune pulse and square leads, bitcrush/sample-hold grit, arcade sweeps |
-| modern | Detuned saw layers, sub-bass thumps, resonant transients, soft clipping |
-| soft | Sine/triangle tones, gentle attacks, low-passed noise; muted and non-fatiguing |
-| realistic | Noise-based scuffs and impacts, resonant band-passes, pitch-dropped thumps |
+| _retro_ | Chiptune pulse and square leads, bitcrush/sample-hold grit, arcade sweeps |
+| _modern_ | Detuned saw layers, sub-bass thumps, resonant transients, soft clipping |
+| _soft_ | Sine/triangle tones, gentle attacks, low-passed noise; muted and non-fatiguing |
+| _realistic_ | Noise-based scuffs and impacts, resonant band-passes, pitch-dropped thumps |
 
 ## Sounds
 
 Each style includes 39 sounds:
 
-| Category | Files | Variants | Use |
-| --- | --- | --- | --- |
-| Jump | `jump_01`, `jump_02` | 2 | Leaving the ground |
-| Walk | `walk_01` … `walk_04` | 4 | Rotate for footsteps |
-| Hit | `hit_light`, `hit_medium`, `hit_heavy` | 3 | Light, medium, and heavy impacts |
-| Land | `land_01`, `land_02` | 2 | Touching down after a jump |
-| Swing | `swing_01`, `swing_02` | 2 | Attack whooshes |
-| Hurt | `hurt_01`, `hurt_02` | 2 | Player damage |
-| Death | `death_01` | 1 | Death / game-over stinger |
-| Pickup | `pickup_01`, `pickup_02` | 2 | Coins, items, collectibles |
-| UI | `ui_click_01`, `ui_hover_01`, `ui_confirm_01`, `ui_back_01`, `ui_error_01`, `ui_open_01`, `ui_close_01`, `ui_notification_01` | 8 | Menus, buttons, and alerts |
-| Victory | `victory_01` | 1 | Win / level complete |
-| Defeat | `defeat_01` | 1 | Loss / round over |
-| Level Up | `level_up_01` | 1 | Character or skill progression |
-| Achievement | `achievement_01` | 1 | Unlocks, trophies, and rewards |
-| Shoot | `shoot_01`, `shoot_02` | 2 | Projectiles and laser fire |
-| Explosion | `explosion_01` | 1 | Blasts and heavy impacts |
-| Powerup | `powerup_01` | 1 | Rising buff or upgrade sweep |
-| Shield | `shield_01` | 1 | Block, guard, or deflect |
-| Dash | `dash_01` | 1 | Quick dodge or sprint burst |
-| Heal | `heal_01` | 1 | Restoring health or healing magic |
-| Alert | `enemy_alert_01` | 1 | Enemy spotted or warning |
-| Splash | `splash_01` | 1 | Water entry or splash |
+| Category | Description | Sounds |
+| --- | --- | --- |
+| _Jump_ | Leaving the ground | `jump_01`, `jump_02` |
+| _Walk_ | Rotate for footsteps | `walk_01`, `walk_02`, `walk_03`, `walk_04` |
+| _Hit_ | Light, medium, and heavy impacts | `hit_light`, `hit_medium`, `hit_heavy` |
+| _Land_ | Touching down after a jump | `land_01`, `land_02` |
+| _Swing_ | Attack whooshes | `swing_01`, `swing_02` |
+| _Hurt_ | Player damage | `hurt_01`, `hurt_02` |
+| _Death_ | Death / game-over stinger | `death_01` |
+| _Pickup_ | Coins, items, collectibles | `pickup_01`, `pickup_02` |
+| _UI_ | Menus, buttons, and alerts | `ui_click_01`, `ui_hover_01`, `ui_confirm_01`, `ui_back_01`, `ui_error_01`, `ui_open_01`, `ui_close_01`, `ui_notification_01` |
+| _Victory_ | Win / level complete | `victory_01` |
+| _Defeat_ | Loss / round over | `defeat_01` |
+| _Level Up_ | Character or skill progression | `level_up_01` |
+| _Achievement_ | Unlocks, trophies, and rewards | `achievement_01` |
+| _Shoot_ | Projectiles and laser fire | `shoot_01`, `shoot_02` |
+| _Explosion_ | Blasts and heavy impacts | `explosion_01` |
+| _Powerup_ | Rising buff or upgrade sweep | `powerup_01` |
+| _Shield_ | Block, guard, or deflect | `shield_01` |
+| _Dash_ | Quick dodge or sprint burst | `dash_01` |
+| _Heal_ | Restoring health or healing magic | `heal_01` |
+| _Alert_ | Enemy spotted or warning | `enemy_alert_01` |
+| _Splash_ | Water entry or splash | `splash_01` |
 
 ## Audio Specs
 
