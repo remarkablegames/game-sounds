@@ -1,0 +1,44 @@
+name: site
+
+on:
+  push:
+    branches: [master]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Generate sounds
+        run: python3 generate.py --out site/sounds --format all
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+
+      - name: Install dependencies
+        run: npm --prefix site ci --prefer-offline --ignore-scripts
+
+      - name: Build site
+        run: npm --prefix site run build
+
+      - name: Inject Google Analytics
+        uses: remarkablemark/google-analytics-action@v1
+        with:
+          html-path: site/_site/index.html
+          measurement-id: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+
+      - name: Deploy to GitHub Pages
+        uses: remarkablemark/gitploy-action@v1
+        with:
+          directory: site/_site

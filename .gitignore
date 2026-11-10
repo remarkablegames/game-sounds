@@ -166,8 +166,9 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs/Zensical documentation
-/site
+# Eleventy site
+site/_site/
+site/node_modules/
 
 # mypy
 .mypy_cache/

@@ -1,0 +1,68 @@
+---
+layout: layout.njk
+---
+
+<h1>Game Sounds</h1>
+<p>
+  🎵 Preview the {{ manifest.sounds.length }} procedural game sound effects across
+  {{ manifest.styles.length }} styles.
+  <a href="https://github.com/remarkablegames/game-sounds/releases/latest/download/sounds.zip">Download sounds</a>.
+</p>
+
+<h2>Styles</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Style</th>
+      <th>Character</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>retro</strong></td>
+      <td>Chiptune pulse and square leads, bitcrush grit, arcade sweeps</td>
+    </tr>
+    <tr>
+      <td><strong>modern</strong></td>
+      <td>Detuned saw layers, sub-bass thumps, resonant transients</td>
+    </tr>
+    <tr>
+      <td><strong>soft</strong></td>
+      <td>Sine/triangle tones, gentle attacks, low-passed noise</td>
+    </tr>
+    <tr>
+      <td><strong>realistic</strong></td>
+      <td>Noise-based scuffs and impacts, resonant band-passes</td>
+    </tr>
+  </tbody>
+</table>
+
+{% for style in manifest.styles %}
+<section class="style-group" id="{{ style }}">
+  <h2>{{ style | title }}</h2>
+  <div class="sound-grid">
+    {% for sound in manifest.sounds %}
+      {% if sound.style == style %}
+      <article class="sound">
+        <header class="sound-header">
+          <h3>{{ sound.name }}</h3>
+          <span class="kind">{{ sound.kind }}</span>
+        </header>
+        <p class="meta">
+          {{ sound.duration_seconds }}s
+          <span class="sep">&#8226;</span>
+          peak {{ sound.peak_dbfs }} dBFS
+          <span class="sep">&#8226;</span>
+          RMS {{ sound.rms_dbfs }} dBFS
+        </p>
+        <audio controls preload="none">
+          <source src="sounds/{{ sound.files[1] }}" type="audio/ogg" />
+          <source src="sounds/{{ sound.files[2] }}" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
