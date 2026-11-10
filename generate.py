@@ -997,29 +997,42 @@ def make_defeat(style: str, rng: random.Random) -> list[float]:
         )
 
     if style == "modern":
-        lead = tone(
-            0.9,
-            330.0,
-            55.0,
+        first = tone(
+            0.3,
+            392.0,
+            311.0,
             "saw",
             attack=0.006,
-            tau=0.4,
-            vibrato=0.012,
+            tau=0.16,
+            vibrato=0.008,
             vibrato_rate=4.5,
         )
-        sub = tone(0.95, 165.0, 36.0, "sine", attack=0.006, tau=0.45)
-        debris = bandpass(noise(0.6, rng, 0.01, 0.25), 300, 2200)
-        return lowpass(
-            softclip(
-                mix(scale(lead, 0.45), scale(sub, 0.55), scale(debris, 0.15)), 1.4
-            ),
-            4000,
+        second = tone(
+            0.5,
+            294.0,
+            196.0,
+            "saw",
+            attack=0.008,
+            tau=0.24,
+            vibrato=0.01,
+            vibrato_rate=4.0,
         )
+        sub = tone(1.0, 147.0, 49.0, "sine", attack=0.006, tau=0.5)
+        debris = bandpass(noise(0.55, rng, 0.01, 0.22), 250, 1600)
+        body = mix(
+            scale(first, 0.5),
+            scale(offset(second, 0.26), 0.55),
+            scale(sub, 0.45),
+            scale(debris, 0.12),
+        )
+        return lowpass(softclip(body, 1.35), 3400)
 
     if style == "soft":
-        lead = tone(0.95, 300.0, 90.0, "sine", attack=0.02, tau=0.4)
-        harmony = tone(0.95, 150.0, 45.0, "triangle", attack=0.02, tau=0.35)
-        return lowpass(mix(lead, scale(harmony, 0.25)), 2400)
+        first = tone(0.32, 392.0, 330.0, "sine", attack=0.012, tau=0.2)
+        second = tone(0.65, 294.0, 196.0, "sine", attack=0.02, tau=0.32)
+        harmony = tone(0.65, 147.0, 98.0, "triangle", attack=0.02, tau=0.3)
+        body = mix(first, offset(second, 0.2), scale(harmony, 0.25))
+        return lowpass(body, 2400)
 
     fall = mix(
         bell(
@@ -1071,13 +1084,13 @@ def make_defeat(style: str, rng: random.Random) -> list[float]:
 
 def make_level_up(style: str, rng: random.Random) -> list[float]:
     if style == "retro":
-        notes = ((523.0, 0.07), (659.0, 0.07), (784.0, 0.07), (1047.0, 0.3))
+        notes = ((587.0, 0.07), (740.0, 0.07), (880.0, 0.07), (1175.0, 0.26))
         lead = sequence(notes, "square", duty=0.25, attack=0.001, tau=0.1)
-        tail = offset(
-            tone(0.4, 1047.0, 1047.0, "square", duty=0.25, attack=0.002, tau=0.3),
-            0.42,
+        sparkle = offset(
+            tone(0.22, 1760.0, 1760.0, "square", duty=0.125, attack=0.001, tau=0.12),
+            0.4,
         )
-        return bitcrush(mix(lead, scale(tail, 0.4)), bits=7, hold=2)
+        return bitcrush(mix(lead, scale(sparkle, 0.2)), bits=7, hold=2)
 
     if style == "modern":
         arp = mix(
@@ -1346,9 +1359,30 @@ def make_powerup(style: str, rng: random.Random) -> list[float]:
 
     duration = 0.6
     env = swell_env(samples_for(duration), 0.6)
-    rise = moving_lowpass(noise(duration, rng, env=env), 400, 6000)
-    chime = sequence(((784.0, 0.1), (1175.0, 0.2)), "sine", attack=0.005, tau=0.14)
-    return lowpass(mix(scale(rise, 0.7), scale(chime, 0.4)), 9000)
+    rise = moving_lowpass(noise(duration, rng, env=env), 350, 5000)
+    chime = mix(
+        bell(
+            0.4,
+            587.0,
+            ratios=(1.0, 1.48, 2.31, 3.17),
+            gains=(1.0, 0.4, 0.2, 0.1),
+            attack=0.001,
+            tau=0.12,
+        ),
+        offset(
+            bell(
+                0.45,
+                880.0,
+                ratios=(1.0, 1.48, 2.31, 3.17),
+                gains=(1.0, 0.4, 0.2, 0.1),
+                attack=0.001,
+                tau=0.14,
+            ),
+            0.14,
+        ),
+    )
+    strike = bandpass(noise(0.03, rng, 0.0005, 0.008), 2000, 9000)
+    return lowpass(mix(scale(rise, 0.55), scale(chime, 0.5), scale(strike, 0.2)), 9000)
 
 
 def make_shield(style: str, rng: random.Random) -> list[float]:
