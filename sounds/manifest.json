@@ -1,0 +1,2355 @@
+{
+  "sample_rate": 44100,
+  "channels": 1,
+  "bits_per_sample": 16,
+  "db": -6.0,
+  "base_seed": 1337,
+  "styles": [
+    "retro",
+    "modern",
+    "soft",
+    "realistic"
+  ],
+  "sounds": [
+    {
+      "style": "retro",
+      "name": "jump_01",
+      "kind": "jump",
+      "variant": "01",
+      "duration_seconds": 0.17,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.23,
+      "seed": 1337,
+      "files": [
+        "retro/jump_01.wav",
+        "retro/jump_01.ogg",
+        "retro/jump_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "jump_02",
+      "kind": "jump",
+      "variant": "02",
+      "duration_seconds": 0.2,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.85,
+      "seed": 1434,
+      "files": [
+        "retro/jump_02.wav",
+        "retro/jump_02.ogg",
+        "retro/jump_02.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "walk_01",
+      "kind": "walk",
+      "variant": "01",
+      "duration_seconds": 0.078,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.41,
+      "seed": 1531,
+      "files": [
+        "retro/walk_01.wav",
+        "retro/walk_01.ogg",
+        "retro/walk_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "walk_02",
+      "kind": "walk",
+      "variant": "02",
+      "duration_seconds": 0.086,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.67,
+      "seed": 1628,
+      "files": [
+        "retro/walk_02.wav",
+        "retro/walk_02.ogg",
+        "retro/walk_02.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "walk_03",
+      "kind": "walk",
+      "variant": "03",
+      "duration_seconds": 0.094,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.22,
+      "seed": 1725,
+      "files": [
+        "retro/walk_03.wav",
+        "retro/walk_03.ogg",
+        "retro/walk_03.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "walk_04",
+      "kind": "walk",
+      "variant": "04",
+      "duration_seconds": 0.102,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.44,
+      "seed": 1822,
+      "files": [
+        "retro/walk_04.wav",
+        "retro/walk_04.ogg",
+        "retro/walk_04.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "hit_light",
+      "kind": "hit",
+      "variant": "light",
+      "duration_seconds": 0.12,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.54,
+      "seed": 1919,
+      "files": [
+        "retro/hit_light.wav",
+        "retro/hit_light.ogg",
+        "retro/hit_light.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "hit_medium",
+      "kind": "hit",
+      "variant": "medium",
+      "duration_seconds": 0.2,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -14.17,
+      "seed": 2016,
+      "files": [
+        "retro/hit_medium.wav",
+        "retro/hit_medium.ogg",
+        "retro/hit_medium.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "hit_heavy",
+      "kind": "hit",
+      "variant": "heavy",
+      "duration_seconds": 0.32,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.05,
+      "seed": 2113,
+      "files": [
+        "retro/hit_heavy.wav",
+        "retro/hit_heavy.ogg",
+        "retro/hit_heavy.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "land_01",
+      "kind": "land",
+      "variant": "01",
+      "duration_seconds": 0.28,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.04,
+      "seed": 2210,
+      "files": [
+        "retro/land_01.wav",
+        "retro/land_01.ogg",
+        "retro/land_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "land_02",
+      "kind": "land",
+      "variant": "02",
+      "duration_seconds": 0.3,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.04,
+      "seed": 2307,
+      "files": [
+        "retro/land_02.wav",
+        "retro/land_02.ogg",
+        "retro/land_02.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "swing_01",
+      "kind": "swing",
+      "variant": "01",
+      "duration_seconds": 0.29,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.44,
+      "seed": 2404,
+      "files": [
+        "retro/swing_01.wav",
+        "retro/swing_01.ogg",
+        "retro/swing_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "swing_02",
+      "kind": "swing",
+      "variant": "02",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.34,
+      "seed": 2501,
+      "files": [
+        "retro/swing_02.wav",
+        "retro/swing_02.ogg",
+        "retro/swing_02.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "hurt_01",
+      "kind": "hurt",
+      "variant": "01",
+      "duration_seconds": 0.18,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.84,
+      "seed": 2598,
+      "files": [
+        "retro/hurt_01.wav",
+        "retro/hurt_01.ogg",
+        "retro/hurt_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "hurt_02",
+      "kind": "hurt",
+      "variant": "02",
+      "duration_seconds": 0.2,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.16,
+      "seed": 2695,
+      "files": [
+        "retro/hurt_02.wav",
+        "retro/hurt_02.ogg",
+        "retro/hurt_02.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "death_01",
+      "kind": "death",
+      "variant": "01",
+      "duration_seconds": 0.96,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -11.63,
+      "seed": 2792,
+      "files": [
+        "retro/death_01.wav",
+        "retro/death_01.ogg",
+        "retro/death_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "pickup_01",
+      "kind": "pickup",
+      "variant": "01",
+      "duration_seconds": 0.195,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.5,
+      "seed": 2889,
+      "files": [
+        "retro/pickup_01.wav",
+        "retro/pickup_01.ogg",
+        "retro/pickup_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "pickup_02",
+      "kind": "pickup",
+      "variant": "02",
+      "duration_seconds": 0.24,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.14,
+      "seed": 2986,
+      "files": [
+        "retro/pickup_02.wav",
+        "retro/pickup_02.ogg",
+        "retro/pickup_02.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "ui_click_01",
+      "kind": "ui_click",
+      "variant": "01",
+      "duration_seconds": 0.05,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -12.93,
+      "seed": 3083,
+      "files": [
+        "retro/ui_click_01.wav",
+        "retro/ui_click_01.ogg",
+        "retro/ui_click_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "ui_hover_01",
+      "kind": "ui_hover",
+      "variant": "01",
+      "duration_seconds": 0.03,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -12.64,
+      "seed": 3180,
+      "files": [
+        "retro/ui_hover_01.wav",
+        "retro/ui_hover_01.ogg",
+        "retro/ui_hover_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "ui_confirm_01",
+      "kind": "ui_confirm",
+      "variant": "01",
+      "duration_seconds": 0.16,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -14.89,
+      "seed": 3277,
+      "files": [
+        "retro/ui_confirm_01.wav",
+        "retro/ui_confirm_01.ogg",
+        "retro/ui_confirm_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "ui_back_01",
+      "kind": "ui_back",
+      "variant": "01",
+      "duration_seconds": 0.16,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -14.94,
+      "seed": 3374,
+      "files": [
+        "retro/ui_back_01.wav",
+        "retro/ui_back_01.ogg",
+        "retro/ui_back_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "ui_error_01",
+      "kind": "ui_error",
+      "variant": "01",
+      "duration_seconds": 0.22,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -12.2,
+      "seed": 3471,
+      "files": [
+        "retro/ui_error_01.wav",
+        "retro/ui_error_01.ogg",
+        "retro/ui_error_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "ui_open_01",
+      "kind": "ui_open",
+      "variant": "01",
+      "duration_seconds": 0.17,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -14.42,
+      "seed": 3568,
+      "files": [
+        "retro/ui_open_01.wav",
+        "retro/ui_open_01.ogg",
+        "retro/ui_open_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "ui_close_01",
+      "kind": "ui_close",
+      "variant": "01",
+      "duration_seconds": 0.17,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -14.43,
+      "seed": 3665,
+      "files": [
+        "retro/ui_close_01.wav",
+        "retro/ui_close_01.ogg",
+        "retro/ui_close_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "ui_notification_01",
+      "kind": "ui_notification",
+      "variant": "01",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.12,
+      "seed": 3762,
+      "files": [
+        "retro/ui_notification_01.wav",
+        "retro/ui_notification_01.ogg",
+        "retro/ui_notification_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "victory_01",
+      "kind": "victory",
+      "variant": "01",
+      "duration_seconds": 1.46,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.58,
+      "seed": 3859,
+      "files": [
+        "retro/victory_01.wav",
+        "retro/victory_01.ogg",
+        "retro/victory_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "defeat_01",
+      "kind": "defeat",
+      "variant": "01",
+      "duration_seconds": 1.05,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.17,
+      "seed": 3956,
+      "files": [
+        "retro/defeat_01.wav",
+        "retro/defeat_01.ogg",
+        "retro/defeat_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "level_up_01",
+      "kind": "level_up",
+      "variant": "01",
+      "duration_seconds": 0.62,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -14.36,
+      "seed": 4053,
+      "files": [
+        "retro/level_up_01.wav",
+        "retro/level_up_01.ogg",
+        "retro/level_up_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "achievement_01",
+      "kind": "achievement",
+      "variant": "01",
+      "duration_seconds": 0.79,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -14.87,
+      "seed": 4150,
+      "files": [
+        "retro/achievement_01.wav",
+        "retro/achievement_01.ogg",
+        "retro/achievement_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "shoot_01",
+      "kind": "shoot",
+      "variant": "01",
+      "duration_seconds": 0.13,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.22,
+      "seed": 4247,
+      "files": [
+        "retro/shoot_01.wav",
+        "retro/shoot_01.ogg",
+        "retro/shoot_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "shoot_02",
+      "kind": "shoot",
+      "variant": "02",
+      "duration_seconds": 0.19,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.15,
+      "seed": 4344,
+      "files": [
+        "retro/shoot_02.wav",
+        "retro/shoot_02.ogg",
+        "retro/shoot_02.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "explosion_01",
+      "kind": "explosion",
+      "variant": "01",
+      "duration_seconds": 0.55,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -14.81,
+      "seed": 4441,
+      "files": [
+        "retro/explosion_01.wav",
+        "retro/explosion_01.ogg",
+        "retro/explosion_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "powerup_01",
+      "kind": "powerup",
+      "variant": "01",
+      "duration_seconds": 0.46,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.29,
+      "seed": 4538,
+      "files": [
+        "retro/powerup_01.wav",
+        "retro/powerup_01.ogg",
+        "retro/powerup_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "shield_01",
+      "kind": "shield",
+      "variant": "01",
+      "duration_seconds": 0.3,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.1,
+      "seed": 4635,
+      "files": [
+        "retro/shield_01.wav",
+        "retro/shield_01.ogg",
+        "retro/shield_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "dash_01",
+      "kind": "dash",
+      "variant": "01",
+      "duration_seconds": 0.18,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.88,
+      "seed": 4732,
+      "files": [
+        "retro/dash_01.wav",
+        "retro/dash_01.ogg",
+        "retro/dash_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "heal_01",
+      "kind": "heal",
+      "variant": "01",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.11,
+      "seed": 4829,
+      "files": [
+        "retro/heal_01.wav",
+        "retro/heal_01.ogg",
+        "retro/heal_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "enemy_alert_01",
+      "kind": "enemy_alert",
+      "variant": "01",
+      "duration_seconds": 0.3,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -10.41,
+      "seed": 4926,
+      "files": [
+        "retro/enemy_alert_01.wav",
+        "retro/enemy_alert_01.ogg",
+        "retro/enemy_alert_01.mp3"
+      ]
+    },
+    {
+      "style": "retro",
+      "name": "splash_01",
+      "kind": "splash",
+      "variant": "01",
+      "duration_seconds": 0.35,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -20.63,
+      "seed": 5023,
+      "files": [
+        "retro/splash_01.wav",
+        "retro/splash_01.ogg",
+        "retro/splash_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "jump_01",
+      "kind": "jump",
+      "variant": "01",
+      "duration_seconds": 0.2,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.58,
+      "seed": 2346,
+      "files": [
+        "modern/jump_01.wav",
+        "modern/jump_01.ogg",
+        "modern/jump_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "jump_02",
+      "kind": "jump",
+      "variant": "02",
+      "duration_seconds": 0.2,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.58,
+      "seed": 2443,
+      "files": [
+        "modern/jump_02.wav",
+        "modern/jump_02.ogg",
+        "modern/jump_02.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "walk_01",
+      "kind": "walk",
+      "variant": "01",
+      "duration_seconds": 0.1,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.17,
+      "seed": 2540,
+      "files": [
+        "modern/walk_01.wav",
+        "modern/walk_01.ogg",
+        "modern/walk_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "walk_02",
+      "kind": "walk",
+      "variant": "02",
+      "duration_seconds": 0.1,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.22,
+      "seed": 2637,
+      "files": [
+        "modern/walk_02.wav",
+        "modern/walk_02.ogg",
+        "modern/walk_02.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "walk_03",
+      "kind": "walk",
+      "variant": "03",
+      "duration_seconds": 0.1,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.25,
+      "seed": 2734,
+      "files": [
+        "modern/walk_03.wav",
+        "modern/walk_03.ogg",
+        "modern/walk_03.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "walk_04",
+      "kind": "walk",
+      "variant": "04",
+      "duration_seconds": 0.1,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.21,
+      "seed": 2831,
+      "files": [
+        "modern/walk_04.wav",
+        "modern/walk_04.ogg",
+        "modern/walk_04.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "hit_light",
+      "kind": "hit",
+      "variant": "light",
+      "duration_seconds": 0.12,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -12.86,
+      "seed": 2928,
+      "files": [
+        "modern/hit_light.wav",
+        "modern/hit_light.ogg",
+        "modern/hit_light.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "hit_medium",
+      "kind": "hit",
+      "variant": "medium",
+      "duration_seconds": 0.2,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -12.24,
+      "seed": 3025,
+      "files": [
+        "modern/hit_medium.wav",
+        "modern/hit_medium.ogg",
+        "modern/hit_medium.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "hit_heavy",
+      "kind": "hit",
+      "variant": "heavy",
+      "duration_seconds": 0.32,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -12.19,
+      "seed": 3122,
+      "files": [
+        "modern/hit_heavy.wav",
+        "modern/hit_heavy.ogg",
+        "modern/hit_heavy.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "land_01",
+      "kind": "land",
+      "variant": "01",
+      "duration_seconds": 0.28,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.9,
+      "seed": 3219,
+      "files": [
+        "modern/land_01.wav",
+        "modern/land_01.ogg",
+        "modern/land_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "land_02",
+      "kind": "land",
+      "variant": "02",
+      "duration_seconds": 0.28,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.83,
+      "seed": 3316,
+      "files": [
+        "modern/land_02.wav",
+        "modern/land_02.ogg",
+        "modern/land_02.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "swing_01",
+      "kind": "swing",
+      "variant": "01",
+      "duration_seconds": 0.29,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.16,
+      "seed": 3413,
+      "files": [
+        "modern/swing_01.wav",
+        "modern/swing_01.ogg",
+        "modern/swing_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "swing_02",
+      "kind": "swing",
+      "variant": "02",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.45,
+      "seed": 3510,
+      "files": [
+        "modern/swing_02.wav",
+        "modern/swing_02.ogg",
+        "modern/swing_02.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "hurt_01",
+      "kind": "hurt",
+      "variant": "01",
+      "duration_seconds": 0.22,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.74,
+      "seed": 3607,
+      "files": [
+        "modern/hurt_01.wav",
+        "modern/hurt_01.ogg",
+        "modern/hurt_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "hurt_02",
+      "kind": "hurt",
+      "variant": "02",
+      "duration_seconds": 0.22,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.77,
+      "seed": 3704,
+      "files": [
+        "modern/hurt_02.wav",
+        "modern/hurt_02.ogg",
+        "modern/hurt_02.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "death_01",
+      "kind": "death",
+      "variant": "01",
+      "duration_seconds": 0.85,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.64,
+      "seed": 3801,
+      "files": [
+        "modern/death_01.wav",
+        "modern/death_01.ogg",
+        "modern/death_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "pickup_01",
+      "kind": "pickup",
+      "variant": "01",
+      "duration_seconds": 0.29,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.47,
+      "seed": 3898,
+      "files": [
+        "modern/pickup_01.wav",
+        "modern/pickup_01.ogg",
+        "modern/pickup_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "pickup_02",
+      "kind": "pickup",
+      "variant": "02",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.45,
+      "seed": 3995,
+      "files": [
+        "modern/pickup_02.wav",
+        "modern/pickup_02.ogg",
+        "modern/pickup_02.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "ui_click_01",
+      "kind": "ui_click",
+      "variant": "01",
+      "duration_seconds": 0.05,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.83,
+      "seed": 4092,
+      "files": [
+        "modern/ui_click_01.wav",
+        "modern/ui_click_01.ogg",
+        "modern/ui_click_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "ui_hover_01",
+      "kind": "ui_hover",
+      "variant": "01",
+      "duration_seconds": 0.03,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.34,
+      "seed": 4189,
+      "files": [
+        "modern/ui_hover_01.wav",
+        "modern/ui_hover_01.ogg",
+        "modern/ui_hover_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "ui_confirm_01",
+      "kind": "ui_confirm",
+      "variant": "01",
+      "duration_seconds": 0.16,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.23,
+      "seed": 4286,
+      "files": [
+        "modern/ui_confirm_01.wav",
+        "modern/ui_confirm_01.ogg",
+        "modern/ui_confirm_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "ui_back_01",
+      "kind": "ui_back",
+      "variant": "01",
+      "duration_seconds": 0.16,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.19,
+      "seed": 4383,
+      "files": [
+        "modern/ui_back_01.wav",
+        "modern/ui_back_01.ogg",
+        "modern/ui_back_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "ui_error_01",
+      "kind": "ui_error",
+      "variant": "01",
+      "duration_seconds": 0.22,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -12.84,
+      "seed": 4480,
+      "files": [
+        "modern/ui_error_01.wav",
+        "modern/ui_error_01.ogg",
+        "modern/ui_error_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "ui_open_01",
+      "kind": "ui_open",
+      "variant": "01",
+      "duration_seconds": 0.17,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.4,
+      "seed": 4577,
+      "files": [
+        "modern/ui_open_01.wav",
+        "modern/ui_open_01.ogg",
+        "modern/ui_open_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "ui_close_01",
+      "kind": "ui_close",
+      "variant": "01",
+      "duration_seconds": 0.17,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.44,
+      "seed": 4674,
+      "files": [
+        "modern/ui_close_01.wav",
+        "modern/ui_close_01.ogg",
+        "modern/ui_close_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "ui_notification_01",
+      "kind": "ui_notification",
+      "variant": "01",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.83,
+      "seed": 4771,
+      "files": [
+        "modern/ui_notification_01.wav",
+        "modern/ui_notification_01.ogg",
+        "modern/ui_notification_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "victory_01",
+      "kind": "victory",
+      "variant": "01",
+      "duration_seconds": 1.64,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.19,
+      "seed": 4868,
+      "files": [
+        "modern/victory_01.wav",
+        "modern/victory_01.ogg",
+        "modern/victory_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "defeat_01",
+      "kind": "defeat",
+      "variant": "01",
+      "duration_seconds": 1.0,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.43,
+      "seed": 4965,
+      "files": [
+        "modern/defeat_01.wav",
+        "modern/defeat_01.ogg",
+        "modern/defeat_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "level_up_01",
+      "kind": "level_up",
+      "variant": "01",
+      "duration_seconds": 0.71,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.06,
+      "seed": 5062,
+      "files": [
+        "modern/level_up_01.wav",
+        "modern/level_up_01.ogg",
+        "modern/level_up_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "achievement_01",
+      "kind": "achievement",
+      "variant": "01",
+      "duration_seconds": 0.8,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.95,
+      "seed": 5159,
+      "files": [
+        "modern/achievement_01.wav",
+        "modern/achievement_01.ogg",
+        "modern/achievement_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "shoot_01",
+      "kind": "shoot",
+      "variant": "01",
+      "duration_seconds": 0.13,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.13,
+      "seed": 5256,
+      "files": [
+        "modern/shoot_01.wav",
+        "modern/shoot_01.ogg",
+        "modern/shoot_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "shoot_02",
+      "kind": "shoot",
+      "variant": "02",
+      "duration_seconds": 0.19,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.1,
+      "seed": 5353,
+      "files": [
+        "modern/shoot_02.wav",
+        "modern/shoot_02.ogg",
+        "modern/shoot_02.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "explosion_01",
+      "kind": "explosion",
+      "variant": "01",
+      "duration_seconds": 0.8,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -14.75,
+      "seed": 5450,
+      "files": [
+        "modern/explosion_01.wav",
+        "modern/explosion_01.ogg",
+        "modern/explosion_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "powerup_01",
+      "kind": "powerup",
+      "variant": "01",
+      "duration_seconds": 0.6,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.42,
+      "seed": 5547,
+      "files": [
+        "modern/powerup_01.wav",
+        "modern/powerup_01.ogg",
+        "modern/powerup_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "shield_01",
+      "kind": "shield",
+      "variant": "01",
+      "duration_seconds": 0.5,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.26,
+      "seed": 5644,
+      "files": [
+        "modern/shield_01.wav",
+        "modern/shield_01.ogg",
+        "modern/shield_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "dash_01",
+      "kind": "dash",
+      "variant": "01",
+      "duration_seconds": 0.18,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.02,
+      "seed": 5741,
+      "files": [
+        "modern/dash_01.wav",
+        "modern/dash_01.ogg",
+        "modern/dash_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "heal_01",
+      "kind": "heal",
+      "variant": "01",
+      "duration_seconds": 0.6,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.46,
+      "seed": 5838,
+      "files": [
+        "modern/heal_01.wav",
+        "modern/heal_01.ogg",
+        "modern/heal_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "enemy_alert_01",
+      "kind": "enemy_alert",
+      "variant": "01",
+      "duration_seconds": 0.23,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.52,
+      "seed": 5935,
+      "files": [
+        "modern/enemy_alert_01.wav",
+        "modern/enemy_alert_01.ogg",
+        "modern/enemy_alert_01.mp3"
+      ]
+    },
+    {
+      "style": "modern",
+      "name": "splash_01",
+      "kind": "splash",
+      "variant": "01",
+      "duration_seconds": 0.4,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.95,
+      "seed": 6032,
+      "files": [
+        "modern/splash_01.wav",
+        "modern/splash_01.ogg",
+        "modern/splash_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "jump_01",
+      "kind": "jump",
+      "variant": "01",
+      "duration_seconds": 0.3,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.61,
+      "seed": 3355,
+      "files": [
+        "soft/jump_01.wav",
+        "soft/jump_01.ogg",
+        "soft/jump_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "jump_02",
+      "kind": "jump",
+      "variant": "02",
+      "duration_seconds": 0.3,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.45,
+      "seed": 3452,
+      "files": [
+        "soft/jump_02.wav",
+        "soft/jump_02.ogg",
+        "soft/jump_02.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "walk_01",
+      "kind": "walk",
+      "variant": "01",
+      "duration_seconds": 0.12,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.88,
+      "seed": 3549,
+      "files": [
+        "soft/walk_01.wav",
+        "soft/walk_01.ogg",
+        "soft/walk_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "walk_02",
+      "kind": "walk",
+      "variant": "02",
+      "duration_seconds": 0.12,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.36,
+      "seed": 3646,
+      "files": [
+        "soft/walk_02.wav",
+        "soft/walk_02.ogg",
+        "soft/walk_02.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "walk_03",
+      "kind": "walk",
+      "variant": "03",
+      "duration_seconds": 0.12,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.89,
+      "seed": 3743,
+      "files": [
+        "soft/walk_03.wav",
+        "soft/walk_03.ogg",
+        "soft/walk_03.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "walk_04",
+      "kind": "walk",
+      "variant": "04",
+      "duration_seconds": 0.12,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.58,
+      "seed": 3840,
+      "files": [
+        "soft/walk_04.wav",
+        "soft/walk_04.ogg",
+        "soft/walk_04.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "hit_light",
+      "kind": "hit",
+      "variant": "light",
+      "duration_seconds": 0.12,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.32,
+      "seed": 3937,
+      "files": [
+        "soft/hit_light.wav",
+        "soft/hit_light.ogg",
+        "soft/hit_light.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "hit_medium",
+      "kind": "hit",
+      "variant": "medium",
+      "duration_seconds": 0.2,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.62,
+      "seed": 4034,
+      "files": [
+        "soft/hit_medium.wav",
+        "soft/hit_medium.ogg",
+        "soft/hit_medium.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "hit_heavy",
+      "kind": "hit",
+      "variant": "heavy",
+      "duration_seconds": 0.32,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.74,
+      "seed": 4131,
+      "files": [
+        "soft/hit_heavy.wav",
+        "soft/hit_heavy.ogg",
+        "soft/hit_heavy.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "land_01",
+      "kind": "land",
+      "variant": "01",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.04,
+      "seed": 4228,
+      "files": [
+        "soft/land_01.wav",
+        "soft/land_01.ogg",
+        "soft/land_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "land_02",
+      "kind": "land",
+      "variant": "02",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.55,
+      "seed": 4325,
+      "files": [
+        "soft/land_02.wav",
+        "soft/land_02.ogg",
+        "soft/land_02.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "swing_01",
+      "kind": "swing",
+      "variant": "01",
+      "duration_seconds": 0.29,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.2,
+      "seed": 4422,
+      "files": [
+        "soft/swing_01.wav",
+        "soft/swing_01.ogg",
+        "soft/swing_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "swing_02",
+      "kind": "swing",
+      "variant": "02",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.13,
+      "seed": 4519,
+      "files": [
+        "soft/swing_02.wav",
+        "soft/swing_02.ogg",
+        "soft/swing_02.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "hurt_01",
+      "kind": "hurt",
+      "variant": "01",
+      "duration_seconds": 0.28,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.87,
+      "seed": 4616,
+      "files": [
+        "soft/hurt_01.wav",
+        "soft/hurt_01.ogg",
+        "soft/hurt_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "hurt_02",
+      "kind": "hurt",
+      "variant": "02",
+      "duration_seconds": 0.28,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.9,
+      "seed": 4713,
+      "files": [
+        "soft/hurt_02.wav",
+        "soft/hurt_02.ogg",
+        "soft/hurt_02.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "death_01",
+      "kind": "death",
+      "variant": "01",
+      "duration_seconds": 0.9,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.3,
+      "seed": 4810,
+      "files": [
+        "soft/death_01.wav",
+        "soft/death_01.ogg",
+        "soft/death_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "pickup_01",
+      "kind": "pickup",
+      "variant": "01",
+      "duration_seconds": 0.35,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.56,
+      "seed": 4907,
+      "files": [
+        "soft/pickup_01.wav",
+        "soft/pickup_01.ogg",
+        "soft/pickup_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "pickup_02",
+      "kind": "pickup",
+      "variant": "02",
+      "duration_seconds": 0.46,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.23,
+      "seed": 5004,
+      "files": [
+        "soft/pickup_02.wav",
+        "soft/pickup_02.ogg",
+        "soft/pickup_02.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "ui_click_01",
+      "kind": "ui_click",
+      "variant": "01",
+      "duration_seconds": 0.05,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.56,
+      "seed": 5101,
+      "files": [
+        "soft/ui_click_01.wav",
+        "soft/ui_click_01.ogg",
+        "soft/ui_click_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "ui_hover_01",
+      "kind": "ui_hover",
+      "variant": "01",
+      "duration_seconds": 0.03,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.39,
+      "seed": 5198,
+      "files": [
+        "soft/ui_hover_01.wav",
+        "soft/ui_hover_01.ogg",
+        "soft/ui_hover_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "ui_confirm_01",
+      "kind": "ui_confirm",
+      "variant": "01",
+      "duration_seconds": 0.16,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.74,
+      "seed": 5295,
+      "files": [
+        "soft/ui_confirm_01.wav",
+        "soft/ui_confirm_01.ogg",
+        "soft/ui_confirm_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "ui_back_01",
+      "kind": "ui_back",
+      "variant": "01",
+      "duration_seconds": 0.16,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.7,
+      "seed": 5392,
+      "files": [
+        "soft/ui_back_01.wav",
+        "soft/ui_back_01.ogg",
+        "soft/ui_back_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "ui_error_01",
+      "kind": "ui_error",
+      "variant": "01",
+      "duration_seconds": 0.22,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.77,
+      "seed": 5489,
+      "files": [
+        "soft/ui_error_01.wav",
+        "soft/ui_error_01.ogg",
+        "soft/ui_error_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "ui_open_01",
+      "kind": "ui_open",
+      "variant": "01",
+      "duration_seconds": 0.17,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.34,
+      "seed": 5586,
+      "files": [
+        "soft/ui_open_01.wav",
+        "soft/ui_open_01.ogg",
+        "soft/ui_open_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "ui_close_01",
+      "kind": "ui_close",
+      "variant": "01",
+      "duration_seconds": 0.17,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.33,
+      "seed": 5683,
+      "files": [
+        "soft/ui_close_01.wav",
+        "soft/ui_close_01.ogg",
+        "soft/ui_close_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "ui_notification_01",
+      "kind": "ui_notification",
+      "variant": "01",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.61,
+      "seed": 5780,
+      "files": [
+        "soft/ui_notification_01.wav",
+        "soft/ui_notification_01.ogg",
+        "soft/ui_notification_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "victory_01",
+      "kind": "victory",
+      "variant": "01",
+      "duration_seconds": 1.15,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.35,
+      "seed": 5877,
+      "files": [
+        "soft/victory_01.wav",
+        "soft/victory_01.ogg",
+        "soft/victory_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "defeat_01",
+      "kind": "defeat",
+      "variant": "01",
+      "duration_seconds": 0.85,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.95,
+      "seed": 5974,
+      "files": [
+        "soft/defeat_01.wav",
+        "soft/defeat_01.ogg",
+        "soft/defeat_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "level_up_01",
+      "kind": "level_up",
+      "variant": "01",
+      "duration_seconds": 0.82,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.52,
+      "seed": 6071,
+      "files": [
+        "soft/level_up_01.wav",
+        "soft/level_up_01.ogg",
+        "soft/level_up_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "achievement_01",
+      "kind": "achievement",
+      "variant": "01",
+      "duration_seconds": 0.8,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.31,
+      "seed": 6168,
+      "files": [
+        "soft/achievement_01.wav",
+        "soft/achievement_01.ogg",
+        "soft/achievement_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "shoot_01",
+      "kind": "shoot",
+      "variant": "01",
+      "duration_seconds": 0.13,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.16,
+      "seed": 6265,
+      "files": [
+        "soft/shoot_01.wav",
+        "soft/shoot_01.ogg",
+        "soft/shoot_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "shoot_02",
+      "kind": "shoot",
+      "variant": "02",
+      "duration_seconds": 0.19,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.08,
+      "seed": 6362,
+      "files": [
+        "soft/shoot_02.wav",
+        "soft/shoot_02.ogg",
+        "soft/shoot_02.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "explosion_01",
+      "kind": "explosion",
+      "variant": "01",
+      "duration_seconds": 0.6,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.6,
+      "seed": 6459,
+      "files": [
+        "soft/explosion_01.wav",
+        "soft/explosion_01.ogg",
+        "soft/explosion_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "powerup_01",
+      "kind": "powerup",
+      "variant": "01",
+      "duration_seconds": 0.7,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -15.85,
+      "seed": 6556,
+      "files": [
+        "soft/powerup_01.wav",
+        "soft/powerup_01.ogg",
+        "soft/powerup_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "shield_01",
+      "kind": "shield",
+      "variant": "01",
+      "duration_seconds": 0.55,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.26,
+      "seed": 6653,
+      "files": [
+        "soft/shield_01.wav",
+        "soft/shield_01.ogg",
+        "soft/shield_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "dash_01",
+      "kind": "dash",
+      "variant": "01",
+      "duration_seconds": 0.18,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.59,
+      "seed": 6750,
+      "files": [
+        "soft/dash_01.wav",
+        "soft/dash_01.ogg",
+        "soft/dash_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "heal_01",
+      "kind": "heal",
+      "variant": "01",
+      "duration_seconds": 0.62,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.09,
+      "seed": 6847,
+      "files": [
+        "soft/heal_01.wav",
+        "soft/heal_01.ogg",
+        "soft/heal_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "enemy_alert_01",
+      "kind": "enemy_alert",
+      "variant": "01",
+      "duration_seconds": 0.28,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -13.66,
+      "seed": 6944,
+      "files": [
+        "soft/enemy_alert_01.wav",
+        "soft/enemy_alert_01.ogg",
+        "soft/enemy_alert_01.mp3"
+      ]
+    },
+    {
+      "style": "soft",
+      "name": "splash_01",
+      "kind": "splash",
+      "variant": "01",
+      "duration_seconds": 0.42,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -20.61,
+      "seed": 7041,
+      "files": [
+        "soft/splash_01.wav",
+        "soft/splash_01.ogg",
+        "soft/splash_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "jump_01",
+      "kind": "jump",
+      "variant": "01",
+      "duration_seconds": 0.24,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.68,
+      "seed": 4364,
+      "files": [
+        "realistic/jump_01.wav",
+        "realistic/jump_01.ogg",
+        "realistic/jump_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "jump_02",
+      "kind": "jump",
+      "variant": "02",
+      "duration_seconds": 0.24,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.99,
+      "seed": 4461,
+      "files": [
+        "realistic/jump_02.wav",
+        "realistic/jump_02.ogg",
+        "realistic/jump_02.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "walk_01",
+      "kind": "walk",
+      "variant": "01",
+      "duration_seconds": 0.11,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.96,
+      "seed": 4558,
+      "files": [
+        "realistic/walk_01.wav",
+        "realistic/walk_01.ogg",
+        "realistic/walk_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "walk_02",
+      "kind": "walk",
+      "variant": "02",
+      "duration_seconds": 0.11,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.79,
+      "seed": 4655,
+      "files": [
+        "realistic/walk_02.wav",
+        "realistic/walk_02.ogg",
+        "realistic/walk_02.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "walk_03",
+      "kind": "walk",
+      "variant": "03",
+      "duration_seconds": 0.11,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.34,
+      "seed": 4752,
+      "files": [
+        "realistic/walk_03.wav",
+        "realistic/walk_03.ogg",
+        "realistic/walk_03.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "walk_04",
+      "kind": "walk",
+      "variant": "04",
+      "duration_seconds": 0.11,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.88,
+      "seed": 4849,
+      "files": [
+        "realistic/walk_04.wav",
+        "realistic/walk_04.ogg",
+        "realistic/walk_04.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "hit_light",
+      "kind": "hit",
+      "variant": "light",
+      "duration_seconds": 0.12,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.49,
+      "seed": 4946,
+      "files": [
+        "realistic/hit_light.wav",
+        "realistic/hit_light.ogg",
+        "realistic/hit_light.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "hit_medium",
+      "kind": "hit",
+      "variant": "medium",
+      "duration_seconds": 0.2,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.24,
+      "seed": 5043,
+      "files": [
+        "realistic/hit_medium.wav",
+        "realistic/hit_medium.ogg",
+        "realistic/hit_medium.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "hit_heavy",
+      "kind": "hit",
+      "variant": "heavy",
+      "duration_seconds": 0.32,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.16,
+      "seed": 5140,
+      "files": [
+        "realistic/hit_heavy.wav",
+        "realistic/hit_heavy.ogg",
+        "realistic/hit_heavy.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "land_01",
+      "kind": "land",
+      "variant": "01",
+      "duration_seconds": 0.3,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.19,
+      "seed": 5237,
+      "files": [
+        "realistic/land_01.wav",
+        "realistic/land_01.ogg",
+        "realistic/land_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "land_02",
+      "kind": "land",
+      "variant": "02",
+      "duration_seconds": 0.3,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.55,
+      "seed": 5334,
+      "files": [
+        "realistic/land_02.wav",
+        "realistic/land_02.ogg",
+        "realistic/land_02.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "swing_01",
+      "kind": "swing",
+      "variant": "01",
+      "duration_seconds": 0.29,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -20.82,
+      "seed": 5431,
+      "files": [
+        "realistic/swing_01.wav",
+        "realistic/swing_01.ogg",
+        "realistic/swing_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "swing_02",
+      "kind": "swing",
+      "variant": "02",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -20.52,
+      "seed": 5528,
+      "files": [
+        "realistic/swing_02.wav",
+        "realistic/swing_02.ogg",
+        "realistic/swing_02.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "hurt_01",
+      "kind": "hurt",
+      "variant": "01",
+      "duration_seconds": 0.18,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.83,
+      "seed": 5625,
+      "files": [
+        "realistic/hurt_01.wav",
+        "realistic/hurt_01.ogg",
+        "realistic/hurt_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "hurt_02",
+      "kind": "hurt",
+      "variant": "02",
+      "duration_seconds": 0.18,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.5,
+      "seed": 5722,
+      "files": [
+        "realistic/hurt_02.wav",
+        "realistic/hurt_02.ogg",
+        "realistic/hurt_02.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "death_01",
+      "kind": "death",
+      "variant": "01",
+      "duration_seconds": 0.7,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -21.5,
+      "seed": 5819,
+      "files": [
+        "realistic/death_01.wav",
+        "realistic/death_01.ogg",
+        "realistic/death_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "pickup_01",
+      "kind": "pickup",
+      "variant": "01",
+      "duration_seconds": 0.35,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -20.78,
+      "seed": 5916,
+      "files": [
+        "realistic/pickup_01.wav",
+        "realistic/pickup_01.ogg",
+        "realistic/pickup_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "pickup_02",
+      "kind": "pickup",
+      "variant": "02",
+      "duration_seconds": 0.35,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.98,
+      "seed": 6013,
+      "files": [
+        "realistic/pickup_02.wav",
+        "realistic/pickup_02.ogg",
+        "realistic/pickup_02.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "ui_click_01",
+      "kind": "ui_click",
+      "variant": "01",
+      "duration_seconds": 0.06,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.25,
+      "seed": 6110,
+      "files": [
+        "realistic/ui_click_01.wav",
+        "realistic/ui_click_01.ogg",
+        "realistic/ui_click_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "ui_hover_01",
+      "kind": "ui_hover",
+      "variant": "01",
+      "duration_seconds": 0.04,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.54,
+      "seed": 6207,
+      "files": [
+        "realistic/ui_hover_01.wav",
+        "realistic/ui_hover_01.ogg",
+        "realistic/ui_hover_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "ui_confirm_01",
+      "kind": "ui_confirm",
+      "variant": "01",
+      "duration_seconds": 0.16,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.69,
+      "seed": 6304,
+      "files": [
+        "realistic/ui_confirm_01.wav",
+        "realistic/ui_confirm_01.ogg",
+        "realistic/ui_confirm_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "ui_back_01",
+      "kind": "ui_back",
+      "variant": "01",
+      "duration_seconds": 0.16,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.57,
+      "seed": 6401,
+      "files": [
+        "realistic/ui_back_01.wav",
+        "realistic/ui_back_01.ogg",
+        "realistic/ui_back_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "ui_error_01",
+      "kind": "ui_error",
+      "variant": "01",
+      "duration_seconds": 0.22,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -16.98,
+      "seed": 6498,
+      "files": [
+        "realistic/ui_error_01.wav",
+        "realistic/ui_error_01.ogg",
+        "realistic/ui_error_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "ui_open_01",
+      "kind": "ui_open",
+      "variant": "01",
+      "duration_seconds": 0.17,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -20.6,
+      "seed": 6595,
+      "files": [
+        "realistic/ui_open_01.wav",
+        "realistic/ui_open_01.ogg",
+        "realistic/ui_open_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "ui_close_01",
+      "kind": "ui_close",
+      "variant": "01",
+      "duration_seconds": 0.17,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -21.43,
+      "seed": 6692,
+      "files": [
+        "realistic/ui_close_01.wav",
+        "realistic/ui_close_01.ogg",
+        "realistic/ui_close_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "ui_notification_01",
+      "kind": "ui_notification",
+      "variant": "01",
+      "duration_seconds": 0.34,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.17,
+      "seed": 6789,
+      "files": [
+        "realistic/ui_notification_01.wav",
+        "realistic/ui_notification_01.ogg",
+        "realistic/ui_notification_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "victory_01",
+      "kind": "victory",
+      "variant": "01",
+      "duration_seconds": 1.23,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.5,
+      "seed": 6886,
+      "files": [
+        "realistic/victory_01.wav",
+        "realistic/victory_01.ogg",
+        "realistic/victory_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "defeat_01",
+      "kind": "defeat",
+      "variant": "01",
+      "duration_seconds": 1.2,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.65,
+      "seed": 6983,
+      "files": [
+        "realistic/defeat_01.wav",
+        "realistic/defeat_01.ogg",
+        "realistic/defeat_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "level_up_01",
+      "kind": "level_up",
+      "variant": "01",
+      "duration_seconds": 0.76,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -20.26,
+      "seed": 7080,
+      "files": [
+        "realistic/level_up_01.wav",
+        "realistic/level_up_01.ogg",
+        "realistic/level_up_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "achievement_01",
+      "kind": "achievement",
+      "variant": "01",
+      "duration_seconds": 0.85,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.48,
+      "seed": 7177,
+      "files": [
+        "realistic/achievement_01.wav",
+        "realistic/achievement_01.ogg",
+        "realistic/achievement_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "shoot_01",
+      "kind": "shoot",
+      "variant": "01",
+      "duration_seconds": 0.13,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.76,
+      "seed": 7274,
+      "files": [
+        "realistic/shoot_01.wav",
+        "realistic/shoot_01.ogg",
+        "realistic/shoot_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "shoot_02",
+      "kind": "shoot",
+      "variant": "02",
+      "duration_seconds": 0.19,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -21.44,
+      "seed": 7371,
+      "files": [
+        "realistic/shoot_02.wav",
+        "realistic/shoot_02.ogg",
+        "realistic/shoot_02.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "explosion_01",
+      "kind": "explosion",
+      "variant": "01",
+      "duration_seconds": 0.7,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -23.19,
+      "seed": 7468,
+      "files": [
+        "realistic/explosion_01.wav",
+        "realistic/explosion_01.ogg",
+        "realistic/explosion_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "powerup_01",
+      "kind": "powerup",
+      "variant": "01",
+      "duration_seconds": 0.6,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -18.79,
+      "seed": 7565,
+      "files": [
+        "realistic/powerup_01.wav",
+        "realistic/powerup_01.ogg",
+        "realistic/powerup_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "shield_01",
+      "kind": "shield",
+      "variant": "01",
+      "duration_seconds": 0.4,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -22.81,
+      "seed": 7662,
+      "files": [
+        "realistic/shield_01.wav",
+        "realistic/shield_01.ogg",
+        "realistic/shield_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "dash_01",
+      "kind": "dash",
+      "variant": "01",
+      "duration_seconds": 0.18,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -17.22,
+      "seed": 7759,
+      "files": [
+        "realistic/dash_01.wav",
+        "realistic/dash_01.ogg",
+        "realistic/dash_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "heal_01",
+      "kind": "heal",
+      "variant": "01",
+      "duration_seconds": 0.45,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.64,
+      "seed": 7856,
+      "files": [
+        "realistic/heal_01.wav",
+        "realistic/heal_01.ogg",
+        "realistic/heal_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "enemy_alert_01",
+      "kind": "enemy_alert",
+      "variant": "01",
+      "duration_seconds": 0.44,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -19.0,
+      "seed": 7953,
+      "files": [
+        "realistic/enemy_alert_01.wav",
+        "realistic/enemy_alert_01.ogg",
+        "realistic/enemy_alert_01.mp3"
+      ]
+    },
+    {
+      "style": "realistic",
+      "name": "splash_01",
+      "kind": "splash",
+      "variant": "01",
+      "duration_seconds": 0.42,
+      "peak_dbfs": -6.0,
+      "rms_dbfs": -25.27,
+      "seed": 8050,
+      "files": [
+        "realistic/splash_01.wav",
+        "realistic/splash_01.ogg",
+        "realistic/splash_01.mp3"
+      ]
+    }
+  ]
+}
