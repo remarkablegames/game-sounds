@@ -2,7 +2,7 @@
 
 [![test](https://github.com/remarkablegames/game-sounds/actions/workflows/test.yml/badge.svg)](https://github.com/remarkablegames/game-sounds/actions/workflows/test.yml)
 
-🎵 Procedurally generated game sound effects in 4 audio styles:
+🎵 Procedurally generated game sound effects in 4 audio styles.
 
 - [Preview](https://remarkablegames.org/game-sounds/)
 - [Download](https://github.com/remarkablegames/game-sounds/releases/latest/download/sounds.zip)
