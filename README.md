@@ -11,8 +11,8 @@ Audio is synthesized using the Python standard library (no samples or dependenci
 
 ## Requirements
 
-- [Python 3.10+](https://www.python.org/). Synthesis and WAV generation use the standard library; no Python packages or audio samples are needed.
-- [FFmpeg](https://ffmpeg.org/) with `libvorbis` and `libmp3lame` is required only for OGG and MP3 output.
+- [Python 3.10+](https://www.python.org/). Synthesis and WAV generation use the standard library; no Python packages or audio samples are required.
+- [FFmpeg](https://ffmpeg.org/) (with `libvorbis` and `libmp3lame`) is required only for OGG and MP3 output.
 
 Clone the repository:
 
