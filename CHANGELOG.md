@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/remarkablegames/game-sounds/compare/v0.2.0...v0.2.1) (2026-11-16)
+
+
+### Documentation
+
+* **readme:** tidy description ([83099c4](https://github.com/remarkablegames/game-sounds/commit/83099c4d045d7f0365e5511e265500e54d3629ec))
+* **readme:** tidy requirements ([13fe2a1](https://github.com/remarkablegames/game-sounds/commit/13fe2a1b5ce5fd9d1ea13008b806ec2cd43f6d58))
+
 ## [0.2.0](https://github.com/remarkablegames/game-sounds/compare/v0.1.1...v0.2.0) (2026-11-10)
 
 
